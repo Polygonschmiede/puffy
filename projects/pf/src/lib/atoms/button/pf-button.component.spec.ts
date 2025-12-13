@@ -1,7 +1,7 @@
 import { ResourceLoader } from '@angular/compiler';
 import { TestBed } from '@angular/core/testing';
 import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
-import { PfButton } from './pf-button.component';
+import { PfButton } from 'pf';
 
 describe('PfButton', () => {
   let testEnvInitialized = false;

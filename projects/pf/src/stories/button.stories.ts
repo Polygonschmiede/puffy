@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { PfButton, PfButtonSize, PfButtonTone, PfButtonVariant } from '../lib/atoms/button/pf-button.component';
+import { PfButton, PfButtonSize, PfButtonTone, PfButtonVariant } from 'pf';
 
 type ButtonArgs = Partial<{
   label: string;
