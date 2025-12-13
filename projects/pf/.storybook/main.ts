@@ -9,6 +9,9 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/angular"
+  "framework": "@storybook/angular",
+  angularBuilderOptions: {
+    styles: ['projects/pf/src/lib/styles/pf-tokens.scss'],
+  },
 };
 export default config;

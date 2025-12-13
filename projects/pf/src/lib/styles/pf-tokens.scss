@@ -1,0 +1,30 @@
+:root {
+  --pf-color-surface: #e9edf5;
+  --pf-color-surface-strong: #d7dde8;
+  --pf-color-accent: #5f7bff;
+  --pf-color-accent-strong: #3f63ff;
+  --pf-color-muted: #5a6475;
+  --pf-color-contrast: #0f172a;
+  --pf-color-contrast-weak: #1f2937;
+  --pf-color-border: #cbd4e3;
+
+  --pf-radius-sm: 12px;
+  --pf-radius-md: 16px;
+  --pf-radius-lg: 20px;
+
+  --pf-shadow-raised: 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff;
+  --pf-shadow-pressed: inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff;
+
+  --pf-spacing-xs: 0.35rem;
+  --pf-spacing-sm: 0.55rem;
+  --pf-spacing-md: 0.75rem;
+  --pf-spacing-lg: 1rem;
+
+  --pf-typography-family: 'Inter', 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --pf-typography-weight-medium: 500;
+  --pf-typography-weight-semibold: 600;
+  --pf-typography-weight-bold: 700;
+  --pf-font-size-sm: 0.875rem;
+  --pf-font-size-md: 1rem;
+  --pf-font-size-lg: 1.125rem;
+}

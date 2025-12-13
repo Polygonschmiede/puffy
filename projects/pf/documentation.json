@@ -11,14 +11,44 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Large",
+                "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/pf/src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    disabled: true,\n    label: 'Disabled'\n  }\n}"
+            },
+            {
+                "name": "Flat",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/pf/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'flat',\n    tone: 'neutral',\n    label: 'Flat'\n  }\n}"
+            },
+            {
+                "name": "FullWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/pf/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    fullWidth: true,\n    label: 'Stretch across'\n  }\n}"
+            },
+            {
+                "name": "Ghost",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/pf/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'ghost',\n    tone: 'neutral',\n    label: 'Ghost'\n  }\n}"
             },
             {
                 "name": "LoggedIn",
@@ -67,8 +97,8 @@
                 "file": "projects/pf/src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                "type": "Meta<ButtonArgs>",
+                "defaultValue": "{\n  title: 'Atoms/Button',\n  component: PfButton,\n  tags: ['autodocs'],\n  render: (args: ButtonArgs) => ({\n    props: args\n  }),\n  argTypes: {\n    variant: {\n      control: 'select',\n      options: ['primary', 'ghost', 'flat']\n    },\n    tone: {\n      control: 'select',\n      options: ['accent', 'neutral']\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg']\n    },\n    fullWidth: {\n      control: 'boolean'\n    }\n  },\n  args: {\n    label: 'Press me',\n    variant: 'primary',\n    tone: 'accent',\n    size: 'md',\n    disabled: false,\n    fullWidth: false,\n    type: 'button'\n  }\n}"
             },
             {
                 "name": "meta",
@@ -108,36 +138,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/pf/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/pf/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{}"
             }
         ],
         "functions": [],
         "typealiases": [
             {
+                "name": "ButtonArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "Partial<literal type>",
+                "file": "projects/pf/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 184
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
+                "rawtype": "StoryObj<ButtonArgs>",
                 "file": "projects/pf/src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -171,14 +192,44 @@
         "groupedVariables": {
             "projects/pf/src/stories/button.stories.ts": [
                 {
-                    "name": "Large",
+                    "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/pf/src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    disabled: true,\n    label: 'Disabled'\n  }\n}"
+                },
+                {
+                    "name": "Flat",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/pf/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'flat',\n    tone: 'neutral',\n    label: 'Flat'\n  }\n}"
+                },
+                {
+                    "name": "FullWidth",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/pf/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    fullWidth: true,\n    label: 'Stretch across'\n  }\n}"
+                },
+                {
+                    "name": "Ghost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/pf/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'ghost',\n    tone: 'neutral',\n    label: 'Ghost'\n  }\n}"
                 },
                 {
                     "name": "meta",
@@ -187,8 +238,8 @@
                     "file": "projects/pf/src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args\n  args: { onClick: fn() },\n}"
+                    "type": "Meta<ButtonArgs>",
+                    "defaultValue": "{\n  title: 'Atoms/Button',\n  component: PfButton,\n  tags: ['autodocs'],\n  render: (args: ButtonArgs) => ({\n    props: args\n  }),\n  argTypes: {\n    variant: {\n      control: 'select',\n      options: ['primary', 'ghost', 'flat']\n    },\n    tone: {\n      control: 'select',\n      options: ['accent', 'neutral']\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg']\n    },\n    fullWidth: {\n      control: 'boolean'\n    }\n  },\n  args: {\n    label: 'Press me',\n    variant: 'primary',\n    tone: 'accent',\n    size: 'md',\n    disabled: false,\n    fullWidth: false,\n    type: 'button'\n  }\n}"
                 },
                 {
                     "name": "Primary",
@@ -198,27 +249,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/pf/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/pf/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{}"
                 }
             ],
             "projects/pf/src/stories/header.stories.ts": [
@@ -303,10 +334,21 @@
         "groupedTypeAliases": {
             "projects/pf/src/stories/button.stories.ts": [
                 {
+                    "name": "ButtonArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "Partial<literal type>",
+                    "file": "projects/pf/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 184
+                },
+                {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
+                    "rawtype": "StoryObj<ButtonArgs>",
                     "file": "projects/pf/src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -366,7 +408,37 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pf/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Flat",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pf/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FullWidth",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/pf/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Ghost",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -393,20 +465,10 @@
             },
             {
                 "filePath": "projects/pf/src/stories/button.stories.ts",
-                "type": "variable",
+                "type": "type alias",
                 "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/pf/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
+                "linksubtype": "typealias",
+                "name": "ButtonArgs",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -1,49 +1,82 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from 'storybook/test';
+import { PfButton, PfButtonSize, PfButtonTone, PfButtonVariant } from '../lib/atoms/button/pf-button.component';
 
-import { ButtonComponent } from './button.component';
+type ButtonArgs = Partial<{
+  label: string;
+  variant: PfButtonVariant;
+  tone: PfButtonTone;
+  size: PfButtonSize;
+  disabled: boolean;
+  fullWidth: boolean;
+  type: 'button' | 'submit' | 'reset';
+}>;
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<ButtonComponent> = {
-  title: 'Example/Button',
-  component: ButtonComponent,
+const meta: Meta<ButtonArgs> = {
+  title: 'Atoms/Button',
+  component: PfButton,
   tags: ['autodocs'],
+  render: (args: ButtonArgs) => ({
+    props: args
+  }),
   argTypes: {
-    backgroundColor: {
-      control: 'color',
+    variant: {
+      control: 'select',
+      options: ['primary', 'ghost', 'flat']
     },
+    tone: {
+      control: 'select',
+      options: ['accent', 'neutral']
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg']
+    },
+    fullWidth: {
+      control: 'boolean'
+    }
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
-  args: { onClick: fn() },
+  args: {
+    label: 'Press me',
+    variant: 'primary',
+    tone: 'accent',
+    size: 'md',
+    disabled: false,
+    fullWidth: false,
+    type: 'button'
+  }
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<ButtonArgs>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary: Story = {
+export const Primary: Story = {};
+
+export const Ghost: Story = {
   args: {
-    primary: true,
-    label: 'Button',
-  },
+    variant: 'ghost',
+    tone: 'neutral',
+    label: 'Ghost'
+  }
 };
 
-export const Secondary: Story = {
+export const Flat: Story = {
   args: {
-    label: 'Button',
-  },
+    variant: 'flat',
+    tone: 'neutral',
+    label: 'Flat'
+  }
 };
 
-export const Large: Story = {
+export const FullWidth: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
+    fullWidth: true,
+    label: 'Stretch across'
+  }
 };
 
-export const Small: Story = {
+export const Disabled: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
-  },
+    disabled: true,
+    label: 'Disabled'
+  }
 };

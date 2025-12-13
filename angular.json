@@ -27,7 +27,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/pf/tsconfig.spec.json"
+            "tsConfig": "projects/pf/tsconfig.spec.json",
+            "providersFile": "projects/pf/test.providers.ts"
           }
         },
         "storybook": {

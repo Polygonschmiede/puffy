@@ -9,6 +9,7 @@ You are working on the `pf` Angular library scaffold.
 - Packaging configs: `projects/pf/ng-package.json`, library TypeScript configs `projects/pf/tsconfig.lib*.json`, `projects/pf/tsconfig.spec.json`
 - Design tokens: default CSS tokens in `projects/pf/src/lib/styles/pf-tokens.css`; typed theme helpers in `projects/pf/src/lib/tokens/theme.ts`
 - Atomic structure starting at `projects/pf/src/lib/atoms/` (e.g., button atom in `atoms/button`)
+  - Tokens are SCSS (`projects/pf/src/lib/styles/pf-tokens.scss`) and imported into components/Storybook
 
 ## Commands
 

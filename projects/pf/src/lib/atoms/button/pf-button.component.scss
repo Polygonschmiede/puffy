@@ -1,0 +1,117 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+}
+
+.pf-button__control {
+  align-items: center;
+  appearance: none;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-md, 16px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-md, 1rem);
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  gap: var(--pf-spacing-xs, 0.35rem);
+  justify-content: center;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  min-width: 0;
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-lg, 1rem);
+  position: relative;
+  text-decoration: none;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.pf-button__control:hover {
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff),
+    inset 0 0 0 1px color-mix(in srgb, var(--pf-color-accent, #5f7bff) 8%, transparent);
+}
+
+.pf-button__control:focus-visible {
+  outline: 2px solid var(--pf-color-accent-strong, #3f63ff);
+  outline-offset: 2px;
+}
+
+.pf-button__control:active {
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  transform: translateY(1px);
+}
+
+.pf-button--primary {
+  background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pf-color-accent, #5f7bff) 92%, white 8%),
+      color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 92%, white 8%)
+    ),
+    var(--pf-color-surface, #e9edf5);
+  color: white;
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 40%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-button--primary:hover {
+  color: white;
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff),
+    inset 0 0 0 1px color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 16%, transparent);
+}
+
+.pf-button--ghost {
+  background: var(--pf-color-surface, #e9edf5);
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-button--flat {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 88%, white 12%);
+  box-shadow: inset 6px 6px 12px color-mix(in srgb, var(--pf-color-border, #cbd4e3) 60%, transparent),
+    inset -6px -6px 12px #f8fbff;
+  color: var(--pf-color-contrast-weak, #1f2937);
+}
+
+.pf-button--neutral {
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-button--accent {
+  color: white;
+}
+
+.pf-button--sm {
+  border-radius: var(--pf-radius-sm, 12px);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  padding: var(--pf-spacing-xs, 0.35rem) var(--pf-spacing-md, 0.75rem);
+}
+
+.pf-button--lg {
+  border-radius: var(--pf-radius-lg, 20px);
+  font-size: var(--pf-font-size-lg, 1.125rem);
+  padding: var(--pf-spacing-md, 0.75rem) calc(var(--pf-spacing-lg, 1rem) + 0.35rem);
+}
+
+.pf-button--block {
+  display: inline-flex;
+  width: 100%;
+}
+
+.pf-button--disabled,
+.pf-button__control:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  white-space: nowrap;
+}
