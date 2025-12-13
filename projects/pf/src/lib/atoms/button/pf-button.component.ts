@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import {Component, computed, input} from '@angular/core';
 
 export type PfButtonVariant = 'primary' | 'ghost' | 'flat';
 export type PfButtonTone = 'accent' | 'neutral';
@@ -18,7 +18,6 @@ export type PfButtonType = 'button' | 'submit' | 'reset';
     </button>
   `,
   styleUrl: './pf-button.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'pf-button'
   }
