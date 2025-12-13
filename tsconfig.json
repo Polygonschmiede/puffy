@@ -11,6 +11,11 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "experimentalDecorators": true,
+    "paths": {
+      "pf": [
+        "./dist/pf"
+      ]
+    },
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve"
@@ -21,5 +26,19 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/pf/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/pf/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/smush-hush/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/smush-hush/tsconfig.spec.json"
+    }
+  ]
 }

@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "storybook": "ng run pf:storybook",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -33,8 +34,21 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular/build": "^21.0.3",
     "@angular/cli": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
-    "typescript": "~5.9.2"
+    "jsdom": "^27.1.0",
+    "ng-packagr": "^21.0.0",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8",
+    "storybook": "^10.1.8",
+    "@storybook/angular": "^10.1.8",
+    "@storybook/addon-a11y": "^10.1.8",
+    "@storybook/addon-docs": "^10.1.8",
+    "@angular-devkit/build-angular": "^21.0.0",
+    "@angular-devkit/architect": "^0.2100.0",
+    "@angular-devkit/core": "^21.0.0",
+    "@angular/platform-browser-dynamic": "^21.0.0",
+    "@compodoc/compodoc": "^1.1.32"
   }
 }
