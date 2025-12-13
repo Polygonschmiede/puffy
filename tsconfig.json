@@ -13,7 +13,12 @@
     "experimentalDecorators": true,
     "paths": {
       "pf": [
+        "./projects/pf/src/public-api",
         "./dist/pf"
+      ],
+      "pf/*": [
+        "./projects/pf/src/*",
+        "./dist/pf/*"
       ]
     },
     "importHelpers": true,

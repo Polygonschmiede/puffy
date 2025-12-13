@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { PfButton } from '../../../pf/src/lib/atoms/button/pf-button.component';
+import { PfButton } from 'pf';
 
 @Component({
   selector: 'app-root',
