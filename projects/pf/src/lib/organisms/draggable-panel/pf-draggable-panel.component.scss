@@ -1,0 +1,25 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-draggable-panel {
+  border-radius: var(--pf-radius-lg, 20px);
+  background: var(--pf-color-surface, #e9edf5);
+  box-shadow: var(--pf-shadow-soft, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  overflow: hidden;
+}
+
+.pf-draggable-panel__handle {
+  padding: var(--pf-spacing-xs, 0.35rem) var(--pf-spacing-sm, 0.55rem);
+  cursor: grab;
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+  border-bottom: 1px solid var(--pf-color-border, #cbd4e3);
+}
+
+.pf-draggable-panel--dragging .pf-draggable-panel__handle {
+  cursor: grabbing;
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+}
+
+.pf-draggable-panel__content {
+  padding: var(--pf-spacing-md, 0.75rem);
+}

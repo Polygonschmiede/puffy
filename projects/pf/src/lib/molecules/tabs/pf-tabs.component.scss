@@ -1,0 +1,48 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-tabs {
+  display: inline-flex;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  background: var(--pf-color-surface, #e9edf5);
+  padding: var(--pf-spacing-xs, 0.35rem);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-tabs__tab {
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: var(--pf-radius-md, 16px);
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  cursor: pointer;
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+
+.pf-tabs__tab--active {
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-tabs__tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pf-tabs__panel {
+  margin-top: var(--pf-spacing-md, 0.75rem);
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  padding: var(--pf-spacing-md, 0.75rem);
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+  color: var(--pf-color-muted, #5a6475);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+}

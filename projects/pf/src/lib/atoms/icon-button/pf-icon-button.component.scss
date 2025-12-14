@@ -1,0 +1,51 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+}
+
+.pf-icon-button__control {
+  align-items: center;
+  appearance: none;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: 999px;
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--pf-font-size-md, 1rem);
+  height: 2.5rem;
+  justify-content: center;
+  padding: 0.35rem;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
+  width: 2.5rem;
+}
+
+.pf-icon-button__control:hover {
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff),
+    inset 0 0 0 1px color-mix(in srgb, var(--pf-color-accent, #5f7bff) 10%, transparent);
+}
+
+.pf-icon-button__control:active {
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  transform: translateY(1px);
+}
+
+.pf-icon-button--flat {
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-icon-button--ghost {
+  background: transparent;
+  box-shadow: none;
+}
+
+.pf-icon-button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}

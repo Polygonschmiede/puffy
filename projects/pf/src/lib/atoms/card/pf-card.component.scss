@@ -1,0 +1,46 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-card {
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  display: block;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  transition:
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease;
+}
+
+.pf-card--flat {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 94%, white 6%);
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-card--pressed {
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  border-color: color-mix(in srgb, var(--pf-color-border, #cbd4e3) 40%, transparent);
+}
+
+.pf-card--pad-none {
+  padding: 0;
+}
+
+.pf-card--pad-sm {
+  padding: var(--pf-spacing-sm, 0.55rem);
+}
+
+.pf-card--pad-md {
+  padding: var(--pf-spacing-md, 0.75rem);
+}
+
+.pf-card--pad-lg {
+  padding: calc(var(--pf-spacing-lg, 1rem) + var(--pf-spacing-md, 0.75rem));
+}

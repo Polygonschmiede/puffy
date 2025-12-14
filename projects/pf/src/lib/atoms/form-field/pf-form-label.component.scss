@@ -1,0 +1,22 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-form-label__host {
+  display: inline-flex;
+}
+
+.pf-form-label {
+  align-items: center;
+  color: var(--pf-color-contrast, #0f172a);
+  display: inline-flex;
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  gap: var(--pf-spacing-xxs, 0.25rem);
+}
+
+.pf-form-label--muted {
+  color: var(--pf-color-contrast-weak, #334155);
+  font-weight: var(--pf-typography-weight-medium, 500);
+}
+
+.pf-form-label__asterisk {
+  color: var(--pf-color-danger, #ef4444);
+}

@@ -1,0 +1,14 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-icon__glyph {
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--pf-color-contrast, #0f172a);
+}

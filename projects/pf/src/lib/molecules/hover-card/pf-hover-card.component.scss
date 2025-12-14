@@ -1,0 +1,25 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  position: relative;
+  display: inline-flex;
+}
+
+.pf-hover-card__trigger {
+  display: inline-flex;
+}
+
+.pf-hover-card__panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  padding: var(--pf-spacing-md, 0.75rem);
+  min-width: 200px;
+  color: var(--pf-color-muted, #5a6475);
+  z-index: 15;
+}

@@ -1,0 +1,51 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-context-menu__area {
+  display: block;
+}
+
+.pf-context-menu__panel {
+  position: fixed;
+  min-width: 200px;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  padding: var(--pf-spacing-xs, 0.35rem);
+  z-index: 30;
+}
+
+.pf-context-menu__item {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-sm, 0.55rem);
+  border-radius: var(--pf-radius-sm, 12px);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  cursor: pointer;
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-context-menu__item:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 12%, transparent);
+}
+
+.pf-context-menu__item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pf-context-menu__item--destructive {
+  color: var(--pf-color-destructive, #e53e3e);
+}
+
+.pf-context-menu__divider {
+  height: 1px;
+  margin: var(--pf-spacing-xs, 0.35rem) 0;
+  background: color-mix(in srgb, var(--pf-color-border, #cbd4e3) 60%, transparent);
+}

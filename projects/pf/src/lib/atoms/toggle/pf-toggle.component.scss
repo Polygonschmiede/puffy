@@ -1,0 +1,94 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+}
+
+.pf-toggle__control {
+  align-items: center;
+  appearance: none;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-pill, 999px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.925rem);
+  font-weight: var(--pf-typography-weight-medium, 600);
+  gap: var(--pf-spacing-xs, 0.35rem);
+  justify-content: center;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  min-height: 2.25rem;
+  min-width: 0;
+  padding: var(--pf-spacing-xs, 0.35rem) var(--pf-spacing-md, 0.75rem);
+  position: relative;
+  text-decoration: none;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.pf-toggle__control:hover {
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff),
+    inset 0 0 0 1px color-mix(in srgb, var(--pf-color-accent, #5f7bff) 10%, transparent);
+}
+
+.pf-toggle__control:focus-visible {
+  outline: 2px solid var(--pf-color-accent-strong, #3f63ff);
+  outline-offset: 2px;
+}
+
+.pf-toggle__control:active {
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  transform: translateY(1px);
+}
+
+.pf-toggle__control--on {
+  background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pf-color-accent, #5f7bff) 90%, white 10%),
+      color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 92%, white 8%)
+    ),
+    var(--pf-color-surface, #e9edf5);
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 40%, var(--pf-color-border, #cbd4e3));
+  color: white;
+}
+
+.pf-toggle__control--disabled,
+.pf-toggle--disabled .pf-toggle__control {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-toggle__thumb {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+  border-radius: var(--pf-radius-full, 999px);
+  box-shadow: var(--pf-shadow-soft, 4px 4px 10px #cbd4e3, -4px -4px 10px #f8fbff);
+  display: inline-flex;
+  height: 1rem;
+  width: 1rem;
+  transition: transform 140ms ease, background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.pf-toggle__thumb--on {
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 85%, white 15%);
+  box-shadow: var(--pf-shadow-soft, 4px 4px 10px color-mix(in srgb, #4f67ff 80%, transparent), -4px -4px 10px #f8fbff);
+}
+
+.pf-toggle__label {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--pf-spacing-xxs, 0.25rem);
+  white-space: nowrap;
+}
+
+.pf-toggle--on {
+  color: white;
+}

@@ -1,0 +1,74 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+}
+
+.pf-toggle-group__list {
+  display: inline-flex;
+  gap: var(--pf-spacing-xs, 0.35rem);
+}
+
+.pf-toggle-group--vertical .pf-toggle-group__list {
+  flex-direction: column;
+}
+
+.pf-toggle-group__item {
+  align-items: center;
+  appearance: none;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-pill, 999px);
+  box-shadow: var(--pf-shadow-soft, 6px 6px 12px #cbd4e3, -6px -6px 12px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  cursor: pointer;
+  display: inline-flex;
+  gap: var(--pf-spacing-xxs, 0.25rem);
+  justify-content: center;
+  padding: var(--pf-spacing-xs, 0.35rem) var(--pf-spacing-md, 0.75rem);
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  font-size: var(--pf-font-size-sm, 0.925rem);
+  transition:
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
+}
+
+.pf-toggle-group__item:hover {
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+}
+
+.pf-toggle-group__item:focus-visible {
+  outline: 2px solid var(--pf-color-accent-strong, #3f63ff);
+  outline-offset: 2px;
+}
+
+.pf-toggle-group__item--selected {
+  background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pf-color-accent, #5f7bff) 88%, white 12%),
+      color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 90%, white 10%)
+    ),
+    var(--pf-color-surface, #e9edf5);
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 40%, var(--pf-color-border, #cbd4e3));
+  color: white;
+}
+
+.pf-toggle-group__item--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-toggle-group__thumb {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: var(--pf-radius-full, 999px);
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+  box-shadow: var(--pf-shadow-soft, 4px 4px 10px #cbd4e3, -4px -4px 10px #f8fbff);
+}
+
+.pf-toggle-group__item--selected .pf-toggle-group__thumb {
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 85%, white 15%);
+}

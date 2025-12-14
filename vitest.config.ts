@@ -11,6 +11,11 @@ export default defineConfig({
       tsconfig: 'tsconfig.app.json'
     })
   ],
+  resolve: {
+    alias: {
+      pf: path.resolve(rootDir, 'projects/pf/src/public-api.ts')
+    }
+  },
   test: {
     globals: true,
     environment: 'jsdom',

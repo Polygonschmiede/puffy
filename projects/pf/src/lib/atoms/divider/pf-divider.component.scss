@@ -1,0 +1,24 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 40%, transparent),
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 70%, transparent),
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 40%, transparent)
+  );
+  border-radius: var(--pf-radius-sm, 12px);
+}
+
+:host(.horizontal) {
+  height: 1px;
+  width: 100%;
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+:host(.vertical) {
+  width: 1px;
+  height: 100%;
+}

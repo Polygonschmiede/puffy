@@ -1,0 +1,46 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  position: relative;
+  display: inline-flex;
+}
+
+.pf-tooltip__trigger {
+  display: inline-flex;
+}
+
+.pf-tooltip__bubble {
+  position: absolute;
+  z-index: 10;
+  background: var(--pf-color-surface, #e9edf5);
+  color: var(--pf-color-contrast, #0f172a);
+  padding: var(--pf-spacing-xs, 0.35rem) var(--pf-spacing-sm, 0.55rem);
+  border-radius: var(--pf-radius-sm, 12px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  white-space: nowrap;
+  font-size: var(--pf-font-size-sm, 0.875rem);
+}
+
+.pf-tooltip__bubble--top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-0.4rem);
+}
+
+.pf-tooltip__bubble--bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0.4rem);
+}
+
+.pf-tooltip__bubble--left {
+  right: 100%;
+  top: 50%;
+  transform: translateX(-0.4rem) translateY(-50%);
+}
+
+.pf-tooltip__bubble--right {
+  left: 100%;
+  top: 50%;
+  transform: translateX(0.4rem) translateY(-50%);
+}

@@ -1,0 +1,28 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-spacing-xxs, 0.25rem);
+}
+
+.pf-form-field__control {
+  display: flex;
+  width: 100%;
+}
+
+.pf-form-field__description {
+  color: var(--pf-color-contrast-weak, #334155);
+  font-size: var(--pf-font-size-sm, 0.9rem);
+  margin: 0;
+}
+
+.pf-form-field__error {
+  color: var(--pf-color-danger, #ef4444);
+  font-size: var(--pf-font-size-sm, 0.9rem);
+  margin: 0;
+}
+
+:host([data-invalid='true']) .pf-form-field__control {
+  color: var(--pf-color-danger, #ef4444);
+}

@@ -1,0 +1,43 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.pf-select__wrapper {
+  display: grid;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  width: 100%;
+}
+
+.pf-select__label {
+  color: var(--pf-color-contrast, #0f172a);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  font-weight: var(--pf-typography-weight-semibold, 600);
+}
+
+.pf-select__control {
+  appearance: none;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-md, 16px);
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-md, 1rem);
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+  outline: none;
+}
+
+.pf-select__control:focus-visible {
+  border-color: var(--pf-color-accent, #5f7bff);
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff),
+    0 0 0 2px color-mix(in srgb, var(--pf-color-accent, #5f7bff) 22%, transparent);
+}
+
+.pf-select__control:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,0 +1,57 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  position: fixed;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.pf-drawer__backdrop {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in srgb, var(--pf-color-contrast, #0f172a) 30%, transparent);
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+}
+
+.pf-drawer__panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(420px, 90vw);
+  height: 100%;
+  background: var(--pf-color-surface, #e9edf5);
+  border-left: 1px solid var(--pf-color-border, #cbd4e3);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  pointer-events: auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.pf-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--pf-spacing-md, 0.75rem) var(--pf-spacing-lg, 1rem);
+}
+
+.pf-drawer__title {
+  margin: 0;
+  font-size: var(--pf-font-size-lg, 1.125rem);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-weight: var(--pf-typography-weight-semibold, 600);
+}
+
+.pf-drawer__close {
+  border: none;
+  background: transparent;
+  font-size: var(--pf-font-size-lg, 1.125rem);
+  cursor: pointer;
+}
+
+.pf-drawer__body {
+  padding: 0 var(--pf-spacing-lg, 1rem) var(--pf-spacing-lg, 1rem);
+  color: var(--pf-color-muted, #5a6475);
+  overflow: auto;
+}

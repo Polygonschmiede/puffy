@@ -1,0 +1,73 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+}
+
+.pf-radio-group__list {
+  display: inline-flex;
+  gap: var(--pf-spacing-xs, 0.35rem);
+}
+
+.pf-radio-group--vertical .pf-radio-group__list {
+  flex-direction: column;
+}
+
+.pf-radio-group__item {
+  appearance: none;
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-pill, 999px);
+  padding: var(--pf-spacing-xxs, 0.25rem) var(--pf-spacing-md, 0.75rem);
+  background: var(--pf-color-surface, #e9edf5);
+  box-shadow: var(--pf-shadow-soft, 6px 6px 12px #cbd4e3, -6px -6px 12px #f8fbff);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pf-spacing-xxs, 0.25rem);
+  cursor: pointer;
+  color: var(--pf-color-contrast, #0f172a);
+  font-weight: var(--pf-typography-weight-medium, 600);
+  transition:
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    color 140ms ease,
+    border-color 140ms ease;
+}
+
+.pf-radio-group__item:hover {
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+}
+
+.pf-radio-group__item:focus-visible {
+  outline: 2px solid var(--pf-color-accent-strong, #3f63ff);
+  outline-offset: 2px;
+}
+
+.pf-radio-group__item--selected {
+  background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--pf-color-accent, #5f7bff) 88%, white 12%),
+      color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 90%, white 10%)
+    ),
+    var(--pf-color-surface, #e9edf5);
+  color: white;
+}
+
+.pf-radio-group__item--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-radio-group__bullet {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: var(--pf-radius-full, 999px);
+  border: 2px solid var(--pf-color-border, #cbd4e3);
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+  box-shadow: var(--pf-shadow-soft, 4px 4px 10px #cbd4e3, -4px -4px 10px #f8fbff);
+}
+
+.pf-radio-group__bullet--selected {
+  border-color: var(--pf-color-accent, #5f7bff);
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 85%, white 15%);
+}

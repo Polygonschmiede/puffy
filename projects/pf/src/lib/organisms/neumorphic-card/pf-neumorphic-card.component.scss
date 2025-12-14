@@ -1,0 +1,12 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-neumorphic-card {
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 12px 12px 24px #cbd4e3, -12px -12px 24px #f8fbff);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+}
+
+.pf-neumorphic-card--padded {
+  padding: var(--pf-spacing-md, 0.75rem);
+}

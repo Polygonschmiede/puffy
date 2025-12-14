@@ -1,0 +1,36 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-surface__body {
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-soft, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-surface__flat {
+  box-shadow: none;
+}
+
+.pf-surface__raised {
+  box-shadow: var(--pf-shadow-raised, 14px 14px 28px #cbd4e3, -14px -14px 28px #f8fbff);
+}
+
+.pf-surface__inset {
+  box-shadow: var(--pf-shadow-inset, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-surface__padding-none {
+  padding: 0;
+}
+
+.pf-surface__padding-sm {
+  padding: var(--pf-spacing-sm, 0.55rem);
+}
+
+.pf-surface__padding-md {
+  padding: var(--pf-spacing-md, 0.75rem);
+}
+
+.pf-surface__padding-lg {
+  padding: var(--pf-spacing-lg, 1rem);
+}

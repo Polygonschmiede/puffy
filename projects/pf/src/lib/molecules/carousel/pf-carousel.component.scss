@@ -1,0 +1,79 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-carousel__host {
+  display: block;
+}
+
+.pf-carousel {
+  padding: var(--pf-spacing-md, 0.75rem);
+  border-radius: var(--pf-radius-lg, 20px);
+  background: var(--pf-color-surface, #e9edf5);
+  box-shadow: var(--pf-shadow-soft, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+}
+
+.pf-carousel__viewport {
+  min-height: 140px;
+  position: relative;
+}
+
+.pf-carousel__slide {
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  position: absolute;
+  inset: 0;
+  padding: var(--pf-spacing-sm, 0.55rem);
+}
+
+.pf-carousel__slide--active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.pf-carousel__title {
+  margin: 0 0 4px;
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-carousel__description {
+  margin: 0;
+  color: var(--pf-color-contrast-weak, #334155);
+}
+
+.pf-carousel__controls {
+  margin-top: var(--pf-spacing-sm, 0.55rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pf-carousel__control {
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: var(--pf-radius-full, 999px);
+  width: 2.25rem;
+  height: 2.25rem;
+  box-shadow: var(--pf-shadow-raised, 8px 8px 16px #cbd4e3, -8px -8px 16px #f8fbff);
+  cursor: pointer;
+}
+
+.pf-carousel__dots {
+  display: inline-flex;
+  gap: var(--pf-spacing-xxs, 0.25rem);
+}
+
+.pf-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--pf-radius-full, 999px);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  background: var(--pf-color-surface, #e9edf5);
+  cursor: pointer;
+  box-shadow: var(--pf-shadow-soft, 4px 4px 10px #cbd4e3, -4px -4px 10px #f8fbff);
+}
+
+.pf-carousel__dot--active {
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 85%, white 15%);
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 50%, var(--pf-color-border, #cbd4e3));
+}

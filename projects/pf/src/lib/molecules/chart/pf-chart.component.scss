@@ -1,0 +1,55 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-chart__host {
+  display: block;
+}
+
+.pf-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  padding: var(--pf-spacing-sm, 0.55rem);
+  border-radius: var(--pf-radius-lg, 20px);
+  background: var(--pf-color-surface, #e9edf5);
+  box-shadow: var(--pf-shadow-soft, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+}
+
+.pf-chart__row {
+  display: grid;
+  grid-template-columns: 1fr 3fr auto;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  align-items: center;
+}
+
+.pf-chart__label {
+  color: var(--pf-color-contrast, #0f172a);
+  font-weight: var(--pf-typography-weight-medium, 600);
+}
+
+.pf-chart__bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: var(--pf-radius-full, 999px);
+  background: color-mix(in srgb, var(--pf-color-border, #cbd4e3) 30%, transparent);
+  overflow: hidden;
+}
+
+.pf-chart__bar {
+  height: 100%;
+  border-radius: var(--pf-radius-full, 999px);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--pf-color-accent, #5f7bff) 90%, white 10%), color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 90%, white 10%));
+  box-shadow: var(--pf-shadow-soft, 4px 4px 10px color-mix(in srgb, #4f67ff 70%, transparent));
+}
+
+.pf-chart__bar--danger {
+  background: linear-gradient(145deg, color-mix(in srgb, #ef4444 90%, white 10%), color-mix(in srgb, #dc2626 90%, white 10%));
+}
+
+.pf-chart__bar--accent {
+  background: linear-gradient(145deg, color-mix(in srgb, #22c55e 90%, white 10%), color-mix(in srgb, #16a34a 90%, white 10%));
+}
+
+.pf-chart__value {
+  font-variant-numeric: tabular-nums;
+  color: var(--pf-color-contrast-weak, #334155);
+}

@@ -1,0 +1,38 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.pf-table__wrapper {
+  width: 100%;
+  overflow: auto;
+  border-radius: var(--pf-radius-lg, 20px);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+}
+
+.pf-table__table th,
+.pf-table__table td {
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+  text-align: left;
+  color: var(--pf-color-contrast, #0f172a);
+  border-bottom: 1px solid color-mix(in srgb, var(--pf-color-border, #cbd4e3) 70%, transparent);
+}
+
+.pf-table__table thead th {
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+}
+
+.pf-table__table tbody tr:nth-child(2n) td {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 92%, white 8%);
+}

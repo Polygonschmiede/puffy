@@ -1,0 +1,22 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-aspect-ratio__inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--pf-radius-md, 16px);
+  background: var(--pf-color-surface, #e9edf5);
+  box-shadow: var(--pf-shadow-soft, 6px 6px 12px #cbd4e3, -6px -6px 12px #f8fbff);
+}
+
+.pf-aspect-ratio__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

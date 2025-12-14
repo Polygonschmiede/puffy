@@ -1,0 +1,35 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-dashboard-layout__host {
+  display: block;
+}
+
+.pf-dashboard-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: var(--pf-spacing-md, 0.75rem);
+}
+
+.pf-dashboard-layout__aside,
+.pf-dashboard-layout__secondary {
+  position: sticky;
+  top: var(--pf-spacing-md, 0.75rem);
+}
+
+@media (max-width: 1200px) {
+  .pf-dashboard-layout {
+    grid-template-columns: 240px 1fr;
+  }
+  .pf-dashboard-layout__secondary {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .pf-dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+  .pf-dashboard-layout__aside {
+    display: none;
+  }
+}

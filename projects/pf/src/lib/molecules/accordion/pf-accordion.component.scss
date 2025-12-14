@@ -1,0 +1,53 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-accordion {
+  border-radius: var(--pf-radius-lg, 20px);
+  overflow: hidden;
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  background: var(--pf-color-surface, #e9edf5);
+}
+
+.pf-accordion__item + .pf-accordion__item {
+  border-top: 1px solid color-mix(in srgb, var(--pf-color-border, #cbd4e3) 60%, transparent);
+}
+
+.pf-accordion__trigger {
+  width: 100%;
+  text-align: left;
+  padding: var(--pf-spacing-md, 0.75rem) var(--pf-spacing-lg, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pf-spacing-sm, 0.55rem);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-md, 1rem);
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pf-accordion__trigger:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pf-accordion__chevron {
+  transition: transform 140ms ease;
+}
+
+.pf-accordion__chevron.open {
+  transform: rotate(-180deg);
+}
+
+.pf-accordion__panel {
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-lg, 1rem) var(--pf-spacing-md, 0.75rem);
+  color: var(--pf-color-muted, #5a6475);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+}

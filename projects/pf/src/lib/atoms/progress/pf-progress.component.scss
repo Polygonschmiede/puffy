@@ -1,0 +1,38 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: grid;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  width: 100%;
+}
+
+.pf-progress__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  color: var(--pf-color-muted, #5a6475);
+}
+
+.pf-progress__label {
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-progress__track {
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: 999px;
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  height: 0.85rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.pf-progress__bar {
+  background: linear-gradient(90deg, var(--pf-color-accent, #5f7bff), color-mix(in srgb, var(--pf-color-accent-strong, #3f63ff) 90%, white 10%));
+  border-radius: 999px;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--pf-color-accent, #5f7bff) 40%, transparent);
+  height: 100%;
+  transition: width 180ms ease;
+}

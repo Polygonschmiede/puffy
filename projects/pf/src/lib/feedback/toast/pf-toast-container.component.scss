@@ -1,0 +1,53 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-toast-container__host {
+  position: fixed;
+  bottom: var(--pf-spacing-lg, 1rem);
+  right: var(--pf-spacing-lg, 1rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pf-spacing-sm, 0.55rem);
+  z-index: 20;
+}
+
+.pf-toast {
+  min-width: 240px;
+  max-width: 360px;
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+  border-radius: var(--pf-radius-md, 16px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  background: var(--pf-color-surface, #e9edf5);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--pf-spacing-sm, 0.55rem);
+  align-items: flex-start;
+}
+
+.pf-toast__title {
+  margin: 0;
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-toast__description {
+  margin: 4px 0 0;
+  color: var(--pf-color-contrast-weak, #334155);
+  font-size: var(--pf-font-size-sm, 0.95rem);
+}
+
+.pf-toast__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--pf-color-contrast-weak, #475569);
+  font-size: 1.1rem;
+}
+
+.pf-toast--success {
+  border-color: color-mix(in srgb, #16a34a 30%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-toast--danger {
+  border-color: color-mix(in srgb, #ef4444 30%, var(--pf-color-border, #cbd4e3));
+}

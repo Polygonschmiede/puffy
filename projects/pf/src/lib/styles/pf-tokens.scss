@@ -7,6 +7,10 @@
   --pf-color-contrast: #0f172a;
   --pf-color-contrast-weak: #1f2937;
   --pf-color-border: #cbd4e3;
+  --pf-color-success: #38a169;
+  --pf-color-warning: #dd6b20;
+  --pf-color-destructive: #e53e3e;
+  --pf-color-info: #3182ce;
 
   --pf-radius-sm: 12px;
   --pf-radius-md: 16px;
@@ -14,6 +18,12 @@
 
   --pf-shadow-raised: 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff;
   --pf-shadow-pressed: inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff;
+  --pf-shadow-soft: 6px 6px 12px color-mix(in srgb, #cbd4e3 80%, transparent),
+    -6px -6px 12px color-mix(in srgb, #f8fbff 80%, transparent);
+  --pf-shadow-inset-soft: inset 6px 6px 12px color-mix(in srgb, #cbd4e3 80%, transparent),
+    inset -6px -6px 12px color-mix(in srgb, #f8fbff 80%, transparent);
+  --pf-shadow-flat: 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+    -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent);
 
   --pf-spacing-xs: 0.35rem;
   --pf-spacing-sm: 0.55rem;

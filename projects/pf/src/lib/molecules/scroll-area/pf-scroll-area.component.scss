@@ -1,0 +1,36 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-scroll-area__viewport {
+  position: relative;
+  width: 100%;
+  overflow: auto;
+  padding: var(--pf-spacing-xs, 0.35rem);
+  border-radius: var(--pf-radius-md, 16px);
+  background: var(--pf-color-surface, #e9edf5);
+  box-shadow: var(--pf-shadow-inset, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--pf-color-border, #cbd4e3) 80%, transparent) transparent;
+}
+
+.pf-scroll-area__viewport::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.pf-scroll-area__viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pf-scroll-area__viewport::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--pf-color-border, #cbd4e3) 90%, white 10%);
+  border: 2px solid var(--pf-color-surface, #e9edf5);
+  border-radius: var(--pf-radius-full, 999px);
+}
+
+.pf-scroll-area__viewport::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--pf-color-border-strong, #9ca3af) 90%, white 10%);
+}

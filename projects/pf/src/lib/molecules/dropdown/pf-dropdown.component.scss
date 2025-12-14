@@ -1,0 +1,72 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  position: relative;
+  display: inline-flex;
+}
+
+.pf-dropdown__trigger {
+  align-items: center;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-md, 16px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  gap: var(--pf-spacing-xs, 0.35rem);
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+}
+
+.pf-dropdown__chevron {
+  transition: transform 120ms ease;
+}
+
+.pf-dropdown__chevron.open {
+  transform: rotate(-180deg);
+}
+
+.pf-dropdown__panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  min-width: 200px;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  padding: var(--pf-spacing-xs, 0.35rem);
+  z-index: 20;
+}
+
+.pf-dropdown__item {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-sm, 0.55rem);
+  border-radius: var(--pf-radius-sm, 12px);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  cursor: pointer;
+  color: var(--pf-color-contrast, #0f172a);
+}
+
+.pf-dropdown__item:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 12%, transparent);
+}
+
+.pf-dropdown__item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pf-dropdown__item--destructive {
+  color: var(--pf-color-destructive, #e53e3e);
+}
+
+.pf-dropdown__divider {
+  height: 1px;
+  margin: var(--pf-spacing-xs, 0.35rem) 0;
+  background: color-mix(in srgb, var(--pf-color-border, #cbd4e3) 60%, transparent);
+}

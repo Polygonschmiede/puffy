@@ -1,0 +1,71 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: flex;
+  width: 100%;
+  min-height: 140px;
+  border-radius: var(--pf-radius-md, 16px);
+  box-shadow: var(--pf-shadow-soft, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  background: var(--pf-color-surface, #e9edf5);
+  overflow: hidden;
+}
+
+.pf-resizable--vertical {
+  flex-direction: column;
+}
+
+.pf-resizable__pane {
+  padding: var(--pf-spacing-sm, 0.55rem);
+  overflow: auto;
+}
+
+.pf-resizable__pane--start {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 94%, white 6%);
+}
+
+.pf-resizable__pane--end {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+  flex: 1;
+}
+
+.pf-resizable__handle {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 80%, white 20%),
+    color-mix(in srgb, var(--pf-color-border-strong, #9ca3af) 70%, white 30%)
+  );
+  cursor: col-resize;
+  width: 10px;
+  border-inline: 1px solid var(--pf-color-border, #cbd4e3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pf-resizable--vertical .pf-resizable__handle {
+  cursor: row-resize;
+  height: 10px;
+  width: 100%;
+  border-inline: none;
+  border-block: 1px solid var(--pf-color-border, #cbd4e3);
+}
+
+.pf-resizable__handle::after {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 40px;
+  border-radius: var(--pf-radius-full, 999px);
+  background: color-mix(in srgb, var(--pf-color-border-strong, #9ca3af) 80%, white 20%);
+}
+
+.pf-resizable--vertical .pf-resizable__handle::after {
+  width: 40px;
+  height: 3px;
+}
+
+.pf-resizable__handle:focus-visible {
+  outline: 2px solid var(--pf-color-accent-strong, #3f63ff);
+  outline-offset: 2px;
+}

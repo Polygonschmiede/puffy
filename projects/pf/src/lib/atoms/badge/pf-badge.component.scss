@@ -1,0 +1,54 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-badge {
+  align-items: center;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  display: inline-flex;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  font-weight: var(--pf-typography-weight-semibold, 600);
+  gap: var(--pf-spacing-xs, 0.35rem);
+  justify-content: center;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  min-width: 0;
+  padding: calc(var(--pf-spacing-xs, 0.35rem) * 0.75) var(--pf-spacing-sm, 0.55rem);
+  transition:
+    box-shadow 120ms ease,
+    transform 120ms ease,
+    border-color 120ms ease;
+}
+
+.pf-badge--flat {
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 94%, white 6%);
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-badge--accent {
+  color: var(--pf-color-accent, #5f7bff);
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 20%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-badge--success {
+  color: var(--pf-color-success, #38a169);
+  border-color: color-mix(in srgb, var(--pf-color-success, #38a169) 22%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-badge--warning {
+  color: var(--pf-color-warning, #dd6b20);
+  border-color: color-mix(in srgb, var(--pf-color-warning, #dd6b20) 25%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-badge--destructive {
+  color: var(--pf-color-destructive, #e53e3e);
+  border-color: color-mix(in srgb, var(--pf-color-destructive, #e53e3e) 24%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-badge__label {
+  white-space: nowrap;
+}

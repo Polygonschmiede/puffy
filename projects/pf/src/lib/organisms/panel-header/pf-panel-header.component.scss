@@ -1,0 +1,42 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--pf-spacing-sm, 0.55rem);
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+  border-bottom: 1px solid var(--pf-color-border, #cbd4e3);
+}
+
+.pf-panel-header__titles {
+  display: grid;
+  gap: 2px;
+}
+
+.pf-panel-header__title {
+  margin: 0;
+  color: var(--pf-color-contrast, #0f172a);
+  font-size: 1.1rem;
+  font-weight: var(--pf-typography-weight-semibold, 600);
+}
+
+.pf-panel-header__subtitle {
+  margin: 0;
+  color: var(--pf-color-contrast-weak, #475569);
+  font-size: 0.95rem;
+}
+
+.pf-panel-header__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pf-color-contrast-weak, #64748b);
+  font-size: 0.75rem;
+}
+
+.pf-panel-header__actions {
+  display: inline-flex;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  align-items: center;
+}

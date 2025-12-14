@@ -1,0 +1,33 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  position: relative;
+  display: inline-flex;
+}
+
+.pf-popover__trigger {
+  align-items: center;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-md, 16px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  color: var(--pf-color-contrast, #0f172a);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+}
+
+.pf-popover__panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  min-width: 220px;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: var(--pf-radius-lg, 20px);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+  padding: var(--pf-spacing-md, 0.75rem);
+  color: var(--pf-color-muted, #5a6475);
+  z-index: 20;
+}

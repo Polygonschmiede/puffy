@@ -1,0 +1,39 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-separator {
+  width: 100%;
+}
+
+.pf-separator__line {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 30%, transparent),
+    var(--pf-color-border, #cbd4e3),
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 30%, transparent)
+  );
+  border-radius: var(--pf-radius-sm, 12px);
+  height: 1px;
+  width: 100%;
+  box-shadow: var(--pf-shadow-inset, inset 6px 6px 12px #cbd4e3, inset -6px -6px 12px #f8fbff);
+}
+
+.pf-separator--vertical {
+  display: inline-flex;
+  height: 100%;
+  width: auto;
+}
+
+.pf-separator--vertical .pf-separator__line {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 30%, transparent),
+    var(--pf-color-border, #cbd4e3),
+    color-mix(in srgb, var(--pf-color-border, #cbd4e3) 30%, transparent)
+  );
+}

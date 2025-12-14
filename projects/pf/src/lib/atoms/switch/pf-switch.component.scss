@@ -1,0 +1,81 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pf-spacing-sm, 0.55rem);
+}
+
+.pf-switch {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--pf-spacing-sm, 0.55rem);
+}
+
+.pf-switch__track {
+  align-items: center;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: 999px;
+  box-shadow: var(--pf-shadow-inset-soft, inset 6px 6px 12px color-mix(in srgb, #cbd4e3 80%, transparent),
+      inset -6px -6px 12px color-mix(in srgb, #f8fbff 80%, transparent));
+  cursor: pointer;
+  display: inline-flex;
+  height: 2.5rem;
+  justify-content: flex-start;
+  position: relative;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+  width: 4.5rem;
+  padding: 0.35rem;
+}
+
+.pf-switch__track--checked {
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 26%, var(--pf-color-border, #cbd4e3));
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+}
+
+.pf-switch__track--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pf-switch__thumb {
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: 999px;
+  box-shadow: var(--pf-shadow-soft, 6px 6px 12px color-mix(in srgb, #cbd4e3 80%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 80%, transparent));
+  display: inline-flex;
+  height: 1.8rem;
+  width: 1.8rem;
+  transform: translateX(0);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.pf-switch__thumb--checked {
+  transform: translateX(1.6rem);
+  box-shadow: var(--pf-shadow-raised, 10px 10px 20px #cbd4e3, -10px -10px 20px #f8fbff);
+}
+
+.pf-switch__thumb--disabled {
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-switch__glow {
+  background: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 40%, transparent);
+  border-radius: 999px;
+  inset: 2px;
+  opacity: 0.25;
+  pointer-events: none;
+  position: absolute;
+}
+
+.pf-switch__label {
+  color: var(--pf-color-muted, #5a6475);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+}

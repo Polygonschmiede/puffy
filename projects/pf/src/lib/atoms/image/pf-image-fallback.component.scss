@@ -1,0 +1,10 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-image-fallback__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--pf-radius-md, 16px);
+  object-fit: cover;
+  box-shadow: var(--pf-shadow-soft, 6px 6px 12px #cbd4e3, -6px -6px 12px #f8fbff);
+}

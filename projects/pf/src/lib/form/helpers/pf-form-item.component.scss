@@ -1,0 +1,8 @@
+.pf-form-item__host {
+  display: block;
+}
+
+.pf-form-item {
+  display: grid;
+  gap: var(--pf-spacing-xxs, 0.25rem);
+}

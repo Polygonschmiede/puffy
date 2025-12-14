@@ -1,0 +1,50 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pf-spacing-sm, 0.55rem);
+}
+
+.pf-radio__control {
+  align-items: center;
+  background: var(--pf-color-surface, #e9edf5);
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  border-radius: 999px;
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+  cursor: pointer;
+  display: inline-flex;
+  height: 1.75rem;
+  justify-content: center;
+  width: 1.75rem;
+  transition:
+    box-shadow 140ms ease,
+    border-color 140ms ease,
+    background-color 140ms ease;
+}
+
+.pf-radio__control--checked {
+  box-shadow: var(--pf-shadow-pressed, inset 10px 10px 20px #cbd4e3, inset -10px -10px 20px #f8fbff);
+  border-color: color-mix(in srgb, var(--pf-color-accent, #5f7bff) 26%, var(--pf-color-border, #cbd4e3));
+}
+
+.pf-radio__control--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pf-radio__dot {
+  background: var(--pf-color-accent, #5f7bff);
+  border-radius: 999px;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--pf-color-accent, #5f7bff) 70%, transparent);
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.pf-radio__label {
+  color: var(--pf-color-muted, #5a6475);
+  cursor: pointer;
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  font-size: var(--pf-font-size-sm, 0.875rem);
+}

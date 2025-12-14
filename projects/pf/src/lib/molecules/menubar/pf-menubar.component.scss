@@ -1,0 +1,28 @@
+@use '../../styles/pf-tokens.scss';
+
+:host {
+  display: block;
+}
+
+.pf-menubar__list {
+  display: inline-flex;
+  gap: var(--pf-spacing-xs, 0.35rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pf-menubar__trigger {
+  border: 1px solid var(--pf-color-border, #cbd4e3);
+  background: var(--pf-color-surface, #e9edf5);
+  border-radius: var(--pf-radius-md, 16px);
+  padding: var(--pf-spacing-sm, 0.55rem) var(--pf-spacing-md, 0.75rem);
+  cursor: pointer;
+  box-shadow: var(--pf-shadow-flat, 6px 6px 12px color-mix(in srgb, #cbd4e3 70%, transparent),
+      -6px -6px 12px color-mix(in srgb, #f8fbff 70%, transparent));
+}
+
+.pf-menubar__trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

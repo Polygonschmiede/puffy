@@ -1,0 +1,43 @@
+@use '../../styles/pf-tokens.scss';
+
+.pf-typography__text {
+  color: var(--pf-color-contrast, #0f172a);
+  font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+}
+
+.pf-typography__h1 {
+  font-size: 2.1rem;
+  font-weight: var(--pf-typography-weight-semibold, 700);
+  line-height: 1.2;
+}
+
+.pf-typography__h2 {
+  font-size: 1.7rem;
+  font-weight: var(--pf-typography-weight-semibold, 650);
+}
+
+.pf-typography__h3 {
+  font-size: 1.35rem;
+  font-weight: var(--pf-typography-weight-semibold, 600);
+}
+
+.pf-typography__subtitle {
+  font-size: 1.1rem;
+  color: var(--pf-color-contrast-weak, #334155);
+}
+
+.pf-typography__body {
+  font-size: 1rem;
+}
+
+.pf-typography__muted {
+  font-size: 0.95rem;
+  color: var(--pf-color-contrast-weak, #475569);
+}
+
+.pf-typography__code {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  background: color-mix(in srgb, var(--pf-color-surface, #e9edf5) 90%, white 10%);
+  border-radius: var(--pf-radius-sm, 12px);
+  padding: 0.1rem 0.35rem;
+}
