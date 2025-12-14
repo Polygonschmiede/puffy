@@ -6,7 +6,7 @@ import { PfDropdownItem } from '../dropdown/pf-dropdown.types';
   imports: [],
   template: `
     <div class="pf-context-menu__area" (contextmenu)="openMenu($event)">
-      <ng-content></ng-content>
+      <ng-content />
     </div>
     @if (open()) {
       <div class="pf-context-menu__panel" [style.top.px]="position().y" [style.left.px]="position().x">

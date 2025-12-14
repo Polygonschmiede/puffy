@@ -5,11 +5,11 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
   imports: [],
   template: `
     <span class="pf-hover-card__trigger" (mouseenter)="show()" (mouseleave)="hide()" (focusin)="show()" (focusout)="hide()">
-      <ng-content select="[pfHoverTrigger]"></ng-content>
+      <ng-content select="[pfHoverTrigger]" />
     </span>
     @if (open()) {
       <div class="pf-hover-card__panel">
-        <ng-content select="[pfHoverContent]"></ng-content>
+        <ng-content select="[pfHoverContent]" />
       </div>
     }
   `,

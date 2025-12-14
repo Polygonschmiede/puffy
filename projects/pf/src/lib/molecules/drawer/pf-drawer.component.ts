@@ -12,7 +12,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
           <button type="button" class="pf-drawer__close" (click)="close()">×</button>
         </header>
         <div class="pf-drawer__body">
-          <ng-content></ng-content>
+          <ng-content />
         </div>
       </aside>
     }

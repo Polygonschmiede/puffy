@@ -2,12 +2,11 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  QueryList,
-  ViewChildren,
   computed,
   input,
   output,
-  signal
+  signal,
+  viewChildren
 } from '@angular/core';
 
 type ToggleGroupItem = {
@@ -60,8 +59,7 @@ export class PfToggleGroup {
 
   readonly valueChange = output<string | string[] | null>();
 
-  @ViewChildren('toggleButton', { read: ElementRef })
-  private readonly buttons!: QueryList<ElementRef<HTMLButtonElement>>;
+  private readonly buttons = viewChildren('toggleButton', { read: ElementRef });
 
   private readonly internalSelection = signal<Set<string>>(new Set());
   private readonly isControlled = computed(() => this.value() !== undefined);
@@ -141,12 +139,12 @@ export class PfToggleGroup {
     }
 
     event.preventDefault();
-    const list = this.buttons?.toArray() ?? [];
-    if (!list.length) {
+    const list = this.buttons ?? [];
+    if (!list().length) {
       return;
     }
 
-    const currentIndex = list.findIndex((ref) => ref.nativeElement === event.target);
+    const currentIndex = list().findIndex((ref) => ref.nativeElement === event.target);
     const orientation = this.orientation();
     const forward = event.key === 'ArrowRight' || event.key === 'ArrowDown';
 
@@ -157,8 +155,8 @@ export class PfToggleGroup {
     const nextIndex =
       currentIndex === -1
         ? 0
-        : (currentIndex + (forward ? 1 : -1) + list.length) % list.length;
+        : (currentIndex + (forward ? 1 : -1) + list().length) % list().length;
 
-    list[nextIndex]?.nativeElement.focus();
+    list()[nextIndex]?.nativeElement.focus();
   }
 }

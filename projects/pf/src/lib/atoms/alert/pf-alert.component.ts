@@ -12,7 +12,7 @@ export type PfAlertVariant = 'info' | 'success' | 'warning' | 'destructive';
         <div class="pf-alert__title">{{ title() }}</div>
       }
       <div class="pf-alert__content">
-        <ng-content></ng-content>
+        <ng-content />
       </div>
     </div>
   `,

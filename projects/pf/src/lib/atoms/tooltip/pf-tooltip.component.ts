@@ -7,7 +7,7 @@ export type PfTooltipPosition = 'top' | 'bottom' | 'left' | 'right';
   imports: [],
   template: `
     <span class="pf-tooltip__trigger">
-      <ng-content select="[pfTooltipTrigger]"></ng-content>
+      <ng-content select="[pfTooltipTrigger]" />
     </span>
     @if (visible()) {
       <span class="pf-tooltip__bubble" [class]="bubbleClass()">{{ content() }}</span>

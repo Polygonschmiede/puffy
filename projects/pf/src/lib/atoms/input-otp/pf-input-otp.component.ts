@@ -2,12 +2,11 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  QueryList,
-  ViewChildren,
   computed,
   input,
   output,
-  signal
+  signal,
+  viewChildren
 } from '@angular/core';
 
 @Component({
@@ -44,8 +43,7 @@ export class PfInputOtp {
 
   readonly valueChange = output<string>();
 
-  @ViewChildren('otpInput', { read: ElementRef })
-  private readonly inputs!: QueryList<ElementRef<HTMLInputElement>>;
+  private readonly inputs = viewChildren('otpInput', { read: ElementRef });
 
   private readonly internal = signal<string[]>([]);
   private readonly isControlled = computed(() => this.value() !== undefined);
@@ -118,7 +116,7 @@ export class PfInputOtp {
   }
 
   private focusIndex(index: number): void {
-    const el = this.inputs?.get(index)?.nativeElement;
+    const el = this.inputs()?.at(index)?.nativeElement;
     el?.focus();
     el?.select();
   }

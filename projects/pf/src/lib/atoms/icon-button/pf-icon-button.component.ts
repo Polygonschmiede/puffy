@@ -7,7 +7,7 @@ export type PfIconButtonVariant = 'raised' | 'flat' | 'ghost';
   imports: [],
   template: `
     <button [attr.type]="type()" [disabled]="disabled()" [class]="buttonClass()">
-      <ng-content></ng-content>
+      <ng-content />
     </button>
   `,
   styleUrl: './pf-icon-button.component.scss',

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, Optional, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Optional, inject, input } from '@angular/core';
 import { PfFormItem } from './pf-form-item.component';
 
 @Component({
@@ -7,12 +7,12 @@ import { PfFormItem } from './pf-form-item.component';
   styleUrl: './pf-form-control.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.aria-invalid]': 'invalid',
+    '[attr.aria-invalid]': 'invalid()',
     '[attr.aria-describedby]': 'describedBy'
   }
 })
 export class PfFormControl implements OnInit {
-  @Input() invalid = false;
+  readonly invalid = input(false);
   @Input() describedBy?: string;
 
   private readonly formItem = inject<PfFormItem | null>(PfFormItem, { optional: true });

@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, computed, input, signal } from '@angular/core';
-import {NgOptimizedImage} from '@angular/common';
+
 
 @Component({
   selector: 'pf-image-fallback',
-  imports: [NgOptimizedImage],
+  imports: [],
   template: `
     <img
       ngOptimizedImage

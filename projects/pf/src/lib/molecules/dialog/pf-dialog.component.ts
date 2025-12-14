@@ -12,11 +12,11 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
           <button type="button" class="pf-dialog__close" (click)="close()">×</button>
         </header>
         <div class="pf-dialog__body">
-          <ng-content></ng-content>
+          <ng-content />
         </div>
         @if (showFooter()) {
           <footer class="pf-dialog__footer">
-            <ng-content select="[pfDialogActions]"></ng-content>
+            <ng-content select="[pfDialogActions]" />
           </footer>
         }
       </div>

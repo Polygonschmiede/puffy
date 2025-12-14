@@ -7,18 +7,16 @@ import { PfRadio } from 'pf';
   imports: [PfRadio],
   template: `
     <div class="radio-demo">
-      <pf-radio
-        label="Option A"
+      <pf-radio label="Option A"
         value="a"
         [checked]="value() === 'a'"
         (checkedChange)="setValue('a')"
-      ></pf-radio>
-      <pf-radio
-        label="Option B"
+       />
+      <pf-radio label="Option B"
         value="b"
         [checked]="value() === 'b'"
         (checkedChange)="setValue('b')"
-      ></pf-radio>
+       />
     </div>
     <p class="radio-demo__summary">Selected: {{ value() || 'none' }}</p>
   `

@@ -2,12 +2,11 @@ import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
-  QueryList,
-  ViewChildren,
   computed,
   input,
   output,
-  signal
+  signal,
+  viewChildren
 } from '@angular/core';
 
 type RadioItem = {
@@ -59,8 +58,7 @@ export class PfRadioGroup {
 
   readonly valueChange = output<string>();
 
-  @ViewChildren('radioBtn', { read: ElementRef })
-  private readonly buttons!: QueryList<ElementRef<HTMLButtonElement>>;
+  private readonly buttons = viewChildren('radioBtn', { read: ElementRef });
 
   private readonly uncontrolled = signal<string | undefined>(undefined);
   private readonly isControlled = computed(() => this.value() !== undefined);
@@ -107,7 +105,7 @@ export class PfRadioGroup {
       return;
     }
 
-    const list = this.buttons?.toArray() ?? [];
+    const list = this.buttons ?? [];
     if (!list.length) {
       return;
     }
@@ -117,12 +115,12 @@ export class PfRadioGroup {
       return;
     }
 
-    const currentIndex = list.findIndex((ref) => ref.nativeElement === event.target);
+    const currentIndex = list().findIndex((ref) => ref.nativeElement === event.target);
     const nextIndex =
       currentIndex === -1
         ? 0
         : (currentIndex + (forward ? 1 : -1) + list.length) % list.length;
 
-    list[nextIndex]?.nativeElement.focus();
+    list()[nextIndex]?.nativeElement.focus();
   }
 }

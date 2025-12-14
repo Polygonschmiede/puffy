@@ -1,63 +1,23 @@
-# Pf
+# pf Design System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0.
+Angular 21 standalone design-system library with a neumorphic theme and atomic structure (atoms → molecules → organisms). The library is consumed via the `pf` path alias pointing to `projects/pf/src/public-api.ts` (or `dist/pf` after build).
 
-## Code scaffolding
+## Structure
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Public API: `projects/pf/src/public-api.ts` (exports atoms, molecules, organisms, feedback toast service/container, form helpers, and theme utilities)
+- Source: `projects/pf/src/lib/` with atoms (buttons, inputs, selection, overlays, typography, surfaces, imagery, skeleton/divider), molecules (accordion, tabs, dialog/drawer/sheet, dropdown/popover/context menu/hover card/navigation/menubar/sidebar, pagination/table/toggle-group, breadcrumb/scroll-area/collapsible/resizable, radio-group/command/calendar/date-picker, chart, carousel), organisms (dashboard layout, panel container/header, draggable panel, neumorphic card), feedback (toast), and form helpers
+- Tokens: `projects/pf/src/lib/styles/pf-tokens.scss` (neumorphic CSS vars) and typed theme helpers `projects/pf/src/lib/tokens/theme.ts` (`buildThemeCssVars`, `applyPfTheme`)
+- Storybook: config in `projects/pf/.storybook/` (compodoc JSON `documentation.json`, global token styles) and stories under `projects/pf/src/stories/`
+- Tests: colocated specs matching `projects/pf/**/*.spec.ts`, bootstrapped via `vitest.worker-setup.ts`; legacy placeholder component `lib/pf.ts` and spec remain
 
-```bash
-ng generate component component-name
-```
+## Commands
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Build: `ng build pf`
+- Storybook: `ng run pf:storybook` (dev) / `ng run pf:build-storybook` (static export)
+- Tests (Vitest): `npm test` / `npm run test:watch`
 
-```bash
-ng generate --help
-```
+## Guidelines
 
-## Building
-
-To build the library, run:
-
-```bash
-ng build pf
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/pf
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Standalone components only; OnPush, signals, `input()`/`output()`, native control flow; host bindings via `host` metadata
+- Keep exports centralized in `public-api.ts`
+- Add Storybook docs/controls and Vitest coverage for every component; align styles with neumorphic tokens and remove any leftover React artifacts when encountered

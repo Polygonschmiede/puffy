@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, signal, input, output } from '@angular/core';
 
 @Component({
   selector: 'pf-draggable-panel',
@@ -18,23 +18,23 @@ import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, 
   }
 })
 export class PfDraggablePanel {
-  @Input() id?: string;
-  @Output() dragStart = new EventEmitter<string | undefined>();
-  @Output() dragEnd = new EventEmitter<string | undefined>();
+  readonly id = input<string>();
+  readonly dragStart = output<string | undefined>();
+  readonly dragEnd = output<string | undefined>();
 
   protected readonly dragging = signal(false);
 
   startDrag(event: PointerEvent): void {
     event.preventDefault();
     this.dragging.set(true);
-    this.dragStart.emit(this.id);
+    this.dragStart.emit(this.id());
   }
 
   @HostListener('window:pointerup')
   stopDrag(): void {
     if (this.dragging()) {
       this.dragging.set(false);
-      this.dragEnd.emit(this.id);
+      this.dragEnd.emit(this.id());
     }
   }
 }

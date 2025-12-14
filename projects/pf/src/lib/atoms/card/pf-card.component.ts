@@ -6,7 +6,7 @@ export type PfCardPadding = 'none' | 'sm' | 'md' | 'lg';
 @Component({
   selector: 'pf-card',
   imports: [],
-  template: `<ng-content></ng-content>`,
+  template: `<ng-content />`,
   styleUrl: './pf-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {

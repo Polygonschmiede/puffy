@@ -10,7 +10,7 @@ import { PfSwitch } from 'pf';
 @Component({
   selector: 'pf-switch-host',
   imports: [PfSwitch],
-  template: `<pf-switch [checked]="checked" [label]="label" (checkedChange)="onChange($event)"></pf-switch>`
+  template: `<pf-switch [checked]="checked" [label]="label" (checkedChange)="onChange($event)" />`
 })
 class PfSwitchHostComponent {
   checked = true;

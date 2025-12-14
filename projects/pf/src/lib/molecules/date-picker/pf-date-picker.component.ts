@@ -16,7 +16,7 @@ import { PfCalendar } from '../calendar/pf-calendar.component';
       </button>
       @if (open()) {
         <div class="pf-date-picker__popover">
-          <pf-calendar [value]="value()" (valueChange)="onSelect($event)"></pf-calendar>
+          <pf-calendar [value]="value()" (valueChange)="onSelect($event)" />
         </div>
       }
     </div>

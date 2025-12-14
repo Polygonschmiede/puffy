@@ -10,7 +10,7 @@ import { PfButton, PfToastContainer, PfToastService } from 'pf';
       <pf-button (clicked)="show('Saved', 'Settings updated', 'success')">Show Toast</pf-button>
       <pf-button (clicked)="show('Error', 'Please retry', 'danger')">Show Error</pf-button>
     </div>
-    <pf-toast-container></pf-toast-container>
+    <pf-toast-container />
   `
 })
 class PfToastDemoComponent {

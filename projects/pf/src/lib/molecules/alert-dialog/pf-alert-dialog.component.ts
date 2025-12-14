@@ -13,7 +13,7 @@ import { ChangeDetectionStrategy, Component, input, output, signal } from '@angu
       <div class="pf-alert-dialog__panel" role="alertdialog" aria-modal="true">
         <h3 class="pf-alert-dialog__title">{{ title() }}</h3>
         <p class="pf-alert-dialog__description">
-          <ng-content></ng-content>
+          <ng-content />
         </p>
         <div class="pf-alert-dialog__actions">
           <button type="button" class="pf-alert-dialog__button pf-alert-dialog__button--ghost" (click)="cancel()">

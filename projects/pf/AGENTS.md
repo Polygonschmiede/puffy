@@ -1,45 +1,24 @@
-You are working on the `pf` Angular library scaffold.
+You are working on the `pf` design-system library (Angular 21, standalone-only).
 
 ## Layout
 
-- Entry: `projects/pf/src/public-api.ts` exports `Pf` component from `projects/pf/src/lib/pf.ts`
-- Tests: `projects/pf/src/lib/pf.spec.ts`
-- Stories: Storybook stories in `projects/pf/src/stories/` with shared assets in `projects/pf/src/stories/assets/`; styles for stories in `projects/pf/src/stories/*.css`
-- Storybook config: `projects/pf/.storybook/` (`main.ts`, `preview.ts`, `tsconfig.json`, `typings.d.ts`)
-- Packaging configs: `projects/pf/ng-package.json`, library TypeScript configs `projects/pf/tsconfig.lib*.json`, `projects/pf/tsconfig.spec.json`
-- Design tokens: default CSS tokens in `projects/pf/src/lib/styles/pf-tokens.css`; typed theme helpers in `projects/pf/src/lib/tokens/theme.ts`
-- Atomic structure starting at `projects/pf/src/lib/atoms/` (e.g., button atom in `atoms/button`)
-  - Tokens are SCSS (`projects/pf/src/lib/styles/pf-tokens.scss`) and imported into components/Storybook
+- Entry/public API: `projects/pf/src/public-api.ts` (aliased as `pf` via root `tsconfig.json`); package metadata `projects/pf/package.json`; build config `projects/pf/ng-package.json`
+- Source: `projects/pf/src/lib/` with atomic hierarchy `atoms/`, `molecules/`, `organisms/`, `feedback/`, `form/`, plus shared tokens in `styles/pf-tokens.scss` and typed helpers in `tokens/theme.ts` (`buildThemeCssVars`, `applyPfTheme`)
+- Example atoms: buttons, icon/icon-button, typography, avatar/image fallback, inputs/textarea/select/checkbox/radio/switch/toggle/slider/progress, surface/aspect-ratio/card, tooltip, skeleton, divider/separator, form-field + label + input-otp
+- Example molecules: accordion, tabs, dialog/drawer/sheet, dropdown/popover/context menu/hover card/navigation/menubar/sidebar, pagination, table, toggle-group, breadcrumb, scroll-area, collapsible, resizable, radio-group/command/calendar/date-picker, chart, carousel
+- Organisms: dashboard layout, panel container/header, draggable panel, neumorphic card; feedback: toast service + container; form helpers exported from `form/helpers`
+- Stories: `projects/pf/src/stories/**/*.stories.ts` (assets under `stories/assets/`); Storybook config in `projects/pf/.storybook/` (`main.ts`, `preview.ts`, `tsconfig.json`, `typings.d.ts`) with compodoc JSON `projects/pf/documentation.json` and global token styles via `angularBuilderOptions.styles`
+- Tests: colocated specs matching `projects/pf/**/*.spec.ts` (Vitest + Angular TestBed bootstrap in `vitest.worker-setup.ts`); legacy placeholder `lib/pf.ts` + `lib/pf.spec.ts` remain
+- TypeScript configs: `projects/pf/tsconfig.lib*.json` for builds, `projects/pf/tsconfig.spec.json` for specs; zoneless test providers in `projects/pf/test.providers.ts`
 
 ## Commands
 
 - Build library: `ng build pf`
-- Run unit tests: `ng test pf`
-- Storybook dev: `ng run pf:storybook`
-- Storybook build: `ng run pf:build-storybook`
-- Vitest: `npm test` (scope includes only `projects/pf/**/*.spec.ts`)
+- Storybook: `ng run pf:storybook` (dev) / `ng run pf:build-storybook` (static)
+- Tests: `npm test` / `npm run test:watch` (Vitest, scoped to `projects/pf/**/*.spec.ts`)
 
-## Notes
+## Notes & Practices
 
-- Generated with Angular CLI 21; current component is placeholder in `pf.ts`
-- Keep library exports centralized in `public-api.ts` (buttons + theme helpers exported)
-- TestBed is initialized in specs (see `pf.spec.ts` and `atoms/button/pf-button.component.spec.ts`) because Angular 21 requires explicit init when using Vitest
-
-## Design System Direction
-
-- Target: Neumorphism aesthetic using design tokens for color, elevation, radius, typography, spacing; tokens must be easy to theme/swap
-- Architecture: Atomic design (atoms, molecules, organisms, templates/pages) mirrored in source + Storybook structure; keep small, focused components
-- Accessibility: maintain focus states and contrast while honoring neumorphic look; OnPush, signals, and computed state
-- Responsiveness: components must adapt fluidly; prefer flex/grid primitives and clamp-based typography/spacing tokens
-
-## Migration Plan
-
-- Port components from the provided Figma/React reference into Angular; remove any leftover React scaffolding when done
-- For each component: implement with tokens + atomic placement, add Storybook story (controls/args), add Vitest spec
-- Expand `public-api.ts` as new atoms/molecules/organisms land; avoid unused exports
-
-## Testing
-
-- Use Vitest for component/unit tests; ensure Angular + Vitest setup exists and run per-component specs
-- Example coverage: `projects/pf/src/lib/atoms/button/pf-button.component.spec.ts`
-- Shared test bootstrap: `vitest.worker-setup.ts` initializes Angular testing env for Vitest workers
+- Style direction: neumorphism with themeable tokens; host classes defined via `host` metadata (no `@HostBinding`/`@HostListener`)
+- Components should stay small, OnPush, signal-based, with `input()`/`output()` and native control flow; keep exports centralized in `public-api.ts`
+- When adding components: wire tokens, add Storybook docs/controls, and ship Vitest coverage; remove any leftover React artifacts if encountered

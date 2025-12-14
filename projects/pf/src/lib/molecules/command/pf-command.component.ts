@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, QueryList, ViewChildren, computed, input, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, computed, input, output, signal, viewChildren } from '@angular/core';
 
 type CommandItem = {
   label: string;
@@ -66,8 +66,7 @@ export class PfCommand {
   readonly selectCommand = output<string>();
   readonly queryChange = output<string>();
 
-  @ViewChildren('optionBtn', { read: ElementRef })
-  private readonly options!: QueryList<ElementRef<HTMLButtonElement>>;
+  private readonly options = viewChildren('optionBtn', { read: ElementRef });
 
   protected readonly query = signal('');
   protected readonly activeIndex = signal(0);
@@ -127,7 +126,7 @@ export class PfCommand {
 
   private focusActive(): void {
     queueMicrotask(() => {
-      const el = this.options?.get(this.activeIndex())?.nativeElement;
+      const el = this.options()?.at(this.activeIndex())?.nativeElement;
       el?.focus();
     });
   }

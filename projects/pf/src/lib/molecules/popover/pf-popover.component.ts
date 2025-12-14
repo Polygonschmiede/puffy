@@ -15,7 +15,7 @@ import { ChangeDetectionStrategy, Component, input, output, signal } from '@angu
 
     @if (open()) {
       <div class="pf-popover__panel" role="dialog">
-        <ng-content></ng-content>
+        <ng-content />
       </div>
     }
   `,

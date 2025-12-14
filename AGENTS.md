@@ -1,65 +1,41 @@
 You are an expert in TypeScript, Angular, and scalable web application development. You write maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
-## TypeScript Best Practices
+## Core Practices
 
-- Use strict type checking
-- Prefer type inference when the type is obvious
-- Avoid the `any` type; use `unknown` when type is uncertain
+- Strict TypeScript; prefer inference; avoid `any` (use `unknown` when uncertain)
+- Standalone-first Angular 21; never set `standalone: true` explicitly (it is the default)
+- Signals for state + `computed()` for derived data; no `mutate`, use `set`/`update`
+- Components stay small/single-purpose with `input()`/`output()`, OnPush change detection, native control flow (`@if`, `@for`, `@switch`), class/style bindings instead of `ngClass`/`ngStyle`
+- Host bindings via the `host` object (no `@HostBinding`/`@HostListener`)
+- Prefer reactive forms; use `NgOptimizedImage` for static images (not for base64)
 
-## Angular Best Practices
+## Workspace Map (Angular 21)
 
-- Always use standalone components over NgModules
-- Must NOT set `standalone: true` inside Angular decorators. It's the default.
-- Use signals for state management
-- Implement lazy loading for feature routes
-- Do NOT use the `@HostBinding` and `@HostListener` decorators. Put host bindings inside the `host` object of the `@Component` or `@Directive` decorator instead
-- Use `NgOptimizedImage` for all static images.
-  - `NgOptimizedImage` does not work for inline base64 images.
+- Path alias `pf` maps to `projects/pf/src/public-api.ts` (and `dist/pf` after build) via `tsconfig.json`
+- App `smush-hush` (SCSS): bootstrap `projects/smush-hush/src/main.ts`, providers `app.config.ts`, root component `app.ts` + `app.html`/`app.scss`, routes in `app.routes.ts` (currently empty), globals `src/styles.scss`, public assets `projects/smush-hush/public/`
+- Library `pf`: design system at `projects/pf/src` with atomic hierarchy under `lib/{atoms,molecules,organisms,feedback,form}`; tokens in `lib/styles/pf-tokens.scss`; typed theme helpers in `lib/tokens/theme.ts`; Storybook config in `projects/pf/.storybook/`; stories under `projects/pf/src/stories/`; compodoc output `documentation.json`
 
-## Components
+## Library Snapshot (`pf`)
 
-- Keep components small and focused on a single responsibility
-- Use `input()` and `output()` functions instead of decorators
-- Use `computed()` for derived state
-- Set `changeDetection: ChangeDetectionStrategy.OnPush` in `@Component` decorator
-- Prefer inline templates for small components
-- Prefer Reactive forms instead of Template-driven ones
-- Do NOT use `ngClass`, use `class` bindings instead
-- Do NOT use `ngStyle`, use `style` bindings instead
+- Public API exports many primitives: atoms (buttons, icon/icon-button, inputs/textarea/select/checkbox/radio, form-field + label, slider/progress/switch/toggle, tooltip/popover triggers, avatar/image fallback, typography, surface/aspect-ratio/card, skeleton/divider/separator), molecules (accordion, tabs, dialog/drawer/sheet, dropdown/popover/context menu/hover card/navigation/menubar/sidebar, pagination, table, toggle-group, breadcrumb, scroll-area, collapsible, resizable, radio-group/command/calendar/date-picker, chart, carousel), organisms (dashboard layout, panel container/header, draggable panel, neumorphic card), feedback (toast service + container), form helpers, and theme utilities
+- Styles follow neumorphic tokens (`pf-tokens.scss`) with host classes declared in component `host` metadata; Storybook pulls tokens globally via `angularBuilderOptions.styles` and wraps stories with a neumorphic surface
+- Vitest specs live alongside components (include pattern `projects/pf/**/*.spec.ts`); Angular TestBed bootstrapped via `vitest.worker-setup.ts`
 
-## State Management
+## App Snapshot (`smush-hush`)
 
-- Use signals for local component state
-- Use `computed()` for derived state
-- Keep state transformations pure and predictable
-- Do NOT use `mutate` on signals, use `update` or `set` instead
+- Minimal host app currently rendering `<pf-button label="Launch">`; routes are empty
+- Unit test `projects/smush-hush/src/app/app.spec.ts` still asserts the old heading `Hello, smush-hush` (will fail until the template is updated)
+- Providers include `provideBrowserGlobalErrorListeners()` and router setup
 
-## Templates
+## Commands
 
-- Keep templates simple and avoid complex logic
-- Use native control flow (`@if`, `@for`, `@switch`) instead of `*ngIf`, `*ngFor`, `*ngSwitch`
-- Use the async pipe to handle observables
+- App dev: `ng serve smush-hush` (npm start)
+- App build: `ng build smush-hush` (use `--configuration development` for dev)
+- Library build: `ng build pf`
+- Storybook: `ng run pf:storybook` (dev) / `ng run pf:build-storybook` (static)
+- Vitest (library specs): `npm test` (`vitest run`) or `npm run test:watch`
 
-## Services
+## Vision & Direction
 
-- Design services around a single responsibility
-- Use the `providedIn: 'root'` option for singleton services
-- Use the `inject()` function instead of constructor injection
-
-## Repository Overview
-
-- Angular CLI 21 workspace with application and library under `projects/`
-- Application `smush-hush`: entry `projects/smush-hush/src/main.ts`, root component `projects/smush-hush/src/app/app.ts` with template/style files alongside, routes in `projects/smush-hush/src/app/app.routes.ts`, global styles `projects/smush-hush/src/styles.scss`, static assets under `projects/smush-hush/public/`
-- Library `pf`: public API `projects/pf/src/public-api.ts`, default component in `projects/pf/src/lib/pf.ts` with test `projects/pf/src/lib/pf.spec.ts`, Storybook stories and assets in `projects/pf/src/stories/`, Storybook config in `projects/pf/.storybook/`
-- Workspace configs: `angular.json` for project targets, root TypeScript config `tsconfig.json`, package metadata in `package.json`
-- Common commands: `npm start`/`ng serve smush-hush` for the app, `ng build smush-hush` for production bundle, `ng build pf` for the library, Storybook via `ng run pf:storybook`, unit tests via `npm test`
-- Vitest setup: `vitest.config.ts` uses Angular Vite plugin and worker setup `vitest.worker-setup.ts` to init Angular TestBed; tests limited to `projects/pf/**/*.spec.ts`
-
-## Vision & Requirements (long-term notes)
-
-- Goal: build a reusable UI framework/design library (`pf`) in Angular 21 using atomic design + design tokens, publishable for multiple apps
-- Style direction: Neumorphism with easily swappable color/typography tokens; prioritize responsive, clean, accessible components
-- Consumption: `smush-hush` dashboard app will consume `pf` components and evolve into a self-serve dashboard builder (future: lockable layouts, webhooks/n8n integration)
-- Migration: React sample/figma reference is the source for components; remove any legacy React code as we port
-- Storybook: every component added/ported must be showcased in Storybook alongside docs/controls
-- Testing: every component needs coverage with Vitest; add harness so Angular + Vitest coexist (no `any`, use strict typing)
+- Build a reusable neumorphic UI framework (`pf`) with atomic design and themeable tokens, consumed by the `smush-hush` dashboard (future: self-serve builder, lockable layouts, webhook/n8n integration)
+- Every new component: align with tokens + accessibility, add Storybook docs/controls, and ship Vitest coverage; remove any legacy React artifacts when encountered
