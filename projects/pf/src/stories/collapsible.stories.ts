@@ -17,7 +17,7 @@ const meta: Meta<CollapsibleArgs> = {
         </div>
       </pf-collapsible>
     `,
-    imports: [PfCollapsible]
+    moduleMetadata: { imports: [PfCollapsible] }
   }),
   args: {
     open: false,

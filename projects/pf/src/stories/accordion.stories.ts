@@ -24,7 +24,7 @@ const meta: Meta<AccordionArgs> = {
         [collapsible]="collapsible"
       ></pf-accordion>
     `,
-    imports: [PfAccordion]
+    moduleMetadata: { imports: [PfAccordion] }
   }),
   args: {
     items: sampleItems,

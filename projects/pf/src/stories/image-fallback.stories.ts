@@ -12,7 +12,7 @@ const meta: Meta<ImgArgs> = {
     template: `
       <pf-image-fallback [src]="src" [fallbackSrc]="fallbackSrc" [alt]="alt" width="200" height="120"></pf-image-fallback>
     `,
-    imports: [PfImageFallback]
+    moduleMetadata: { imports: [PfImageFallback] }
   }),
   args: {
     src: 'invalid.jpg',

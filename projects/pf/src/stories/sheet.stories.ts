@@ -16,7 +16,7 @@ const meta: Meta<SheetArgs> = {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </pf-sheet>
     `,
-    imports: [PfSheet, PfButton]
+    moduleMetadata: { imports: [PfSheet, PfButton] }
   }),
   args: {
     open: false,

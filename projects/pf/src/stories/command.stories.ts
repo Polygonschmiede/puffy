@@ -17,7 +17,7 @@ const meta: Meta<CommandArgs> = {
       <pf-command [open]="open" [items]="items" (openChange)="open = $event" (selectCommand)="selected = $event"></pf-command>
       <p style="margin-top: 12px;">Selected: {{ selected || 'none' }}</p>
     `,
-    imports: [PfCommand, PfButton]
+    moduleMetadata: { imports: [PfCommand, PfButton] }
   }),
   args: {
     open: false,

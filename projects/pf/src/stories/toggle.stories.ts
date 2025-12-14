@@ -22,7 +22,7 @@ const meta: Meta<ToggleArgs> = {
       >
       </pf-toggle>
     `,
-    imports: [PfToggle]
+    moduleMetadata: { imports: [PfToggle] }
   }),
   argTypes: {
     pressed: { control: 'boolean' },

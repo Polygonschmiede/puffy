@@ -20,7 +20,7 @@ const meta: Meta<BadgeArgs> = {
         [tone]="tone"
       ></pf-badge>
     `,
-    imports: [PfBadge]
+    moduleMetadata: { imports: [PfBadge] }
   }),
   argTypes: {
     variant: {

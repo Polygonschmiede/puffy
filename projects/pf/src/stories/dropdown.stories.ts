@@ -22,7 +22,7 @@ const meta: Meta<DropdownArgs> = {
     template: `
       <pf-dropdown [label]="label" [items]="items"></pf-dropdown>
     `,
-    imports: [PfDropdown]
+    moduleMetadata: { imports: [PfDropdown] }
   }),
   args: {
     label: 'Actions',

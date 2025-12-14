@@ -18,7 +18,7 @@ const meta: Meta<DraggableArgs> = {
         <p>Drag events: start {{ start }}, end {{ end }}</p>
       </pf-draggable-panel>
     `,
-    imports: [PfDraggablePanel, PfPanelHeader]
+    moduleMetadata: { imports: [PfDraggablePanel, PfPanelHeader] }
   }),
   args: {
     id: 'panel-1'

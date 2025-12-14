@@ -16,7 +16,7 @@ const meta: Meta<AspectRatioArgs> = {
         </div>
       </pf-aspect-ratio>
     `,
-    imports: [PfAspectRatio]
+    moduleMetadata: { imports: [PfAspectRatio] }
   }),
   args: {
     ratio: 16 / 9

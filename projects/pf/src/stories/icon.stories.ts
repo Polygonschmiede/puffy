@@ -12,7 +12,7 @@ const meta: Meta<IconArgs> = {
     template: `
       <pf-icon [name]="name" [svg]="svg"></pf-icon>
     `,
-    imports: [PfIcon]
+    moduleMetadata: { imports: [PfIcon] }
   }),
   args: {
     name: 'circle',

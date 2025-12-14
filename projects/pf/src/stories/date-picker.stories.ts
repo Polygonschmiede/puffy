@@ -13,7 +13,7 @@ const meta: Meta<DatePickerArgs> = {
       <pf-date-picker [value]="value" (valueChange)="value = $event"></pf-date-picker>
       <p style="margin-top: 12px;">Value: {{ value }}</p>
     `,
-    imports: [PfDatePicker]
+    moduleMetadata: { imports: [PfDatePicker] }
   }),
   args: {
     value: ''

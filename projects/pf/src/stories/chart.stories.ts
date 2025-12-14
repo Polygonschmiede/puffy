@@ -14,7 +14,7 @@ const meta: Meta<ChartArgs> = {
     template: `
       <pf-chart [data]="data"></pf-chart>
     `,
-    imports: [PfChart]
+    moduleMetadata: { imports: [PfChart] }
   }),
   args: {
     data: [

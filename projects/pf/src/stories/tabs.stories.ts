@@ -21,7 +21,7 @@ const meta: Meta<TabsArgs> = {
     template: `
       <pf-tabs [tabs]="tabs" [defaultActiveId]="defaultActiveId"></pf-tabs>
     `,
-    imports: [PfTabs]
+    moduleMetadata: { imports: [PfTabs] }
   }),
   args: {
     tabs,

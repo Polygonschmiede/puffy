@@ -24,7 +24,7 @@ const meta: Meta<ToggleGroupArgs> = {
         Selection: {{ value | json }}
       </p>
     `,
-    imports: [PfToggleGroup]
+    moduleMetadata: { imports: [PfToggleGroup] }
   }),
   argTypes: {
     multiple: { control: 'boolean' },

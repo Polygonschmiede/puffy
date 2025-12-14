@@ -18,7 +18,7 @@ const meta: Meta<AlertArgs> = {
         {{ content }}
       </pf-alert>
     `,
-    imports: [PfAlert]
+    moduleMetadata: { imports: [PfAlert] }
   }),
   argTypes: {
     variant: {

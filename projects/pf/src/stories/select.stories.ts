@@ -31,7 +31,7 @@ const meta: Meta<SelectArgs> = {
         (valueChange)="value = $event"
       ></pf-select>
     `,
-    imports: [PfSelect]
+    moduleMetadata: { imports: [PfSelect] }
   }),
   args: {
     label: 'Fruit',

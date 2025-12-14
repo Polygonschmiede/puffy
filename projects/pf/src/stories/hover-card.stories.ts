@@ -14,7 +14,7 @@ const meta: Meta = {
         </div>
       </pf-hover-card>
     `,
-    imports: [PfHoverCard]
+    moduleMetadata: { imports: [PfHoverCard] }
   })
 };
 

@@ -19,7 +19,7 @@ const meta: Meta<FormHelperArgs> = {
         <pf-form-message [id]="'email-message'" *ngIf="invalid">{{ message }}</pf-form-message>
       </pf-form-item>
     `,
-    imports: [PfFormItem, PfFormControl, PfFormDescription, PfFormMessage, PfFormLabel, PfInput]
+    moduleMetadata: { imports: [PfFormItem, PfFormControl, PfFormDescription, PfFormMessage, PfFormLabel, PfInput] }
   }),
   args: {
     invalid: false,

@@ -31,7 +31,7 @@ const meta: Meta<NavigationArgs> = {
   render: (args: NavigationArgs) => ({
     props: args,
     template: `<pf-navigation-menu [items]="items"></pf-navigation-menu>`,
-    imports: [PfNavigationMenu]
+    moduleMetadata: { imports: [PfNavigationMenu] }
   }),
   args: { items }
 };

@@ -19,7 +19,7 @@ const meta: Meta<LayoutArgs> = {
         </div>
       </pf-dashboard-layout>
     `,
-    imports: [PfDashboardLayout, PfNeumorphicCard]
+    moduleMetadata: { imports: [PfDashboardLayout, PfNeumorphicCard] }
   })
 };
 

@@ -26,7 +26,7 @@ const meta: Meta<ResizableArgs> = {
         <div pfResizableEnd style="padding: 12px;">End Pane</div>
       </pf-resizable>
     `,
-    imports: [PfResizable]
+    moduleMetadata: { imports: [PfResizable] }
   }),
   args: {
     direction: 'horizontal',

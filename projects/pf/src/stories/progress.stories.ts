@@ -22,7 +22,7 @@ const meta: Meta<ProgressArgs> = {
         [showValue]="showValue"
       ></pf-progress>
     `,
-    imports: [PfProgress]
+    moduleMetadata: { imports: [PfProgress] }
   }),
   args: {
     value: 45,

@@ -20,7 +20,7 @@ const meta: Meta<BreadcrumbArgs> = {
         [ariaLabel]="ariaLabel"
       ></pf-breadcrumb>
     `,
-    imports: [PfBreadcrumb]
+    moduleMetadata: { imports: [PfBreadcrumb] }
   }),
   args: {
     ariaLabel: 'Breadcrumb',

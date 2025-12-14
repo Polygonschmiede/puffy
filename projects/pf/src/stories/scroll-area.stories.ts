@@ -21,13 +21,7 @@ const meta: Meta<ScrollAreaArgs> = {
         <div [innerHTML]="content"></div>
       </pf-scroll-area>
     `,
-    imports: [PfScrollArea],
-    moduleMetadata: {
-      providers: []
-    },
-    styles: [``],
-    componentInputs: args,
-    componentOutputs: {}
+    moduleMetadata: { imports: [PfScrollArea] }
   }),
   args: {
     orientation: 'vertical',

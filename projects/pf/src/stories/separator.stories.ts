@@ -16,7 +16,7 @@ const meta: Meta<SeparatorArgs> = {
         <span>Right</span>
       </div>
     `,
-    imports: [PfSeparator]
+    moduleMetadata: { imports: [PfSeparator] }
   }),
   args: {
     orientation: 'vertical'
@@ -39,6 +39,6 @@ export const Horizontal: Story = {
         <span>Below</span>
       </div>
     `,
-    imports: [PfSeparator]
+    moduleMetadata: { imports: [PfSeparator] }
   })
 };

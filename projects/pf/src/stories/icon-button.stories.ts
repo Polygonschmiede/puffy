@@ -17,7 +17,7 @@ const meta: Meta<IconButtonArgs> = {
         <span aria-hidden="true">☆</span>
       </pf-icon-button>
     `,
-    imports: [PfIconButton]
+    moduleMetadata: { imports: [PfIconButton] }
   }),
   argTypes: {
     variant: {

@@ -25,7 +25,7 @@ const meta: Meta<FormFieldArgs> = {
         <input pfFormControl pf-input id="email" placeholder="you@example.com" />
       </pf-form-field>
     `,
-    imports: [PfFormField, PfFormLabel, PfInput]
+    moduleMetadata: { imports: [PfFormField, PfFormLabel, PfInput] }
   }),
   args: {
     label: 'Email',

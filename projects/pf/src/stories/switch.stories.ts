@@ -21,7 +21,7 @@ const meta: Meta<SwitchArgs> = {
         (checkedChange)="checked = $event"
       ></pf-switch>
     `,
-    imports: [PfSwitch]
+    moduleMetadata: { imports: [PfSwitch] }
   }),
   argTypes: {
     checked: { control: 'boolean' },

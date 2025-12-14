@@ -24,7 +24,7 @@ const meta: Meta<AlertDialogArgs> = {
         This action cannot be undone.
       </pf-alert-dialog>
     `,
-    imports: [PfAlertDialog]
+    moduleMetadata: { imports: [PfAlertDialog] }
   }),
   args: {
     triggerLabel: 'Delete',

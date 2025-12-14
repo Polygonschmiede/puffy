@@ -17,7 +17,7 @@ const meta: Meta<TooltipArgs> = {
         <button pfTooltipTrigger type="button" class="demo-btn">Hover me</button>
       </pf-tooltip>
     `,
-    imports: [PfTooltip],
+    moduleMetadata: { imports: [PfTooltip] },
     styles: [
       `
       .demo-btn {

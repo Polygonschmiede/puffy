@@ -18,7 +18,7 @@ const meta: Meta<DividerArgs> = {
         <div>Below</div>
       </div>
     `,
-    imports: [PfDivider],
+    moduleMetadata: { imports: [PfDivider] },
     styles: [
       `
       .divider-demo {

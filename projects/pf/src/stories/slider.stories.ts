@@ -27,7 +27,7 @@ const meta: Meta<SliderArgs> = {
         (valueChange)="value = $event"
       ></pf-slider>
     `,
-    imports: [PfSlider]
+    moduleMetadata: { imports: [PfSlider] }
   }),
   args: {
     min: 0,

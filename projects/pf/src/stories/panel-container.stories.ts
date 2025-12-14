@@ -14,7 +14,7 @@ const meta: Meta<PanelArgs> = {
         <pf-neumorphic-card *ngFor="let i of [1,2,3,4,5]">Panel {{ i }}</pf-neumorphic-card>
       </pf-panel-container>
     `,
-    imports: [PfPanelContainer, PfNeumorphicCard]
+    moduleMetadata: { imports: [PfPanelContainer, PfNeumorphicCard] }
   }),
   args: {
     columns: 3

@@ -25,7 +25,7 @@ const meta: Meta<TextareaArgs> = {
         (valueChange)="value = $event"
       ></pf-textarea>
     `,
-    imports: [PfTextarea]
+    moduleMetadata: { imports: [PfTextarea] }
   }),
   args: {
     label: 'Message',

@@ -13,7 +13,7 @@ const meta: Meta<SkeletonArgs> = {
   render: (args: SkeletonArgs) => ({
     props: args,
     template: `<pf-skeleton [width]="width" [height]="height"></pf-skeleton>`,
-    imports: [PfSkeleton]
+    moduleMetadata: { imports: [PfSkeleton] }
   }),
   args: {
     width: '100%',

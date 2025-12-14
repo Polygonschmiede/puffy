@@ -25,7 +25,7 @@ const meta: Meta<InputArgs> = {
         (valueChange)="value = $event"
       ></pf-input>
     `,
-    imports: [PfInput]
+    moduleMetadata: { imports: [PfInput] }
   }),
   argTypes: {
     disabled: { control: 'boolean' }

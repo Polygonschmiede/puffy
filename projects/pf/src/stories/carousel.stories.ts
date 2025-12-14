@@ -14,7 +14,7 @@ const meta: Meta<CarouselArgs> = {
     template: `
       <pf-carousel [items]="items"></pf-carousel>
     `,
-    imports: [PfCarousel]
+    moduleMetadata: { imports: [PfCarousel] }
   }),
   args: {
     items: [

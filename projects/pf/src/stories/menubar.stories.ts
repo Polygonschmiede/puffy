@@ -18,7 +18,7 @@ const meta: Meta<MenubarArgs> = {
   render: (args: MenubarArgs) => ({
     props: args,
     template: `<pf-menubar [items]="items"></pf-menubar>`,
-    imports: [PfMenubar]
+    moduleMetadata: { imports: [PfMenubar] }
   }),
   args: { items }
 };

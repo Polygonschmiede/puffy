@@ -24,7 +24,7 @@ const meta: Meta<AvatarArgs> = {
         [size]="size"
       ></pf-avatar>
     `,
-    imports: [PfAvatar]
+    moduleMetadata: { imports: [PfAvatar] }
   }),
   argTypes: {
     size: {

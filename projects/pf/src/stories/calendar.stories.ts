@@ -13,7 +13,7 @@ const meta: Meta<CalendarArgs> = {
       <pf-calendar [value]="value" (valueChange)="value = $event"></pf-calendar>
       <p style="margin-top: 12px;">Selected: {{ value }}</p>
     `,
-    imports: [PfCalendar]
+    moduleMetadata: { imports: [PfCalendar] }
   }),
   args: {
     value: ''

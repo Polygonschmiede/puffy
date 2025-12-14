@@ -10,7 +10,7 @@ const meta: Meta<TypographyArgs> = {
   render: (args: TypographyArgs) => ({
     props: args,
     template: `<pf-typography [variant]="variant">Typography {{ variant }}</pf-typography>`,
-    imports: [PfTypography]
+    moduleMetadata: { imports: [PfTypography] }
   }),
   args: {
     variant: 'h3'

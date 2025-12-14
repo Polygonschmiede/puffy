@@ -14,7 +14,7 @@ const meta: Meta<CardArgs> = {
         Soft card surface content
       </pf-neumorphic-card>
     `,
-    imports: [PfNeumorphicCard]
+    moduleMetadata: { imports: [PfNeumorphicCard] }
   }),
   args: {
     padded: true

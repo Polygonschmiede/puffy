@@ -18,7 +18,7 @@ const meta: Meta<InputOtpArgs> = {
       ></pf-input-otp>
       <p style="margin-top: 12px;">Value: {{ value }}</p>
     `,
-    imports: [PfInputOtp]
+    moduleMetadata: { imports: [PfInputOtp] }
   }),
   args: {
     length: 6,

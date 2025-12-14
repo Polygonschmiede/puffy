@@ -14,7 +14,7 @@ const meta: Meta<HeaderArgs> = {
         <button type="button">Action</button>
       </pf-panel-header>
     `,
-    imports: [PfPanelHeader]
+    moduleMetadata: { imports: [PfPanelHeader] }
   }),
   args: {
     title: 'Metrics',

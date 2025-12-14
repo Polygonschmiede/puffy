@@ -103,3 +103,8 @@ Storybook-Smoke wäre als nächster Schritt sinnvoll, um die neuen Komponenten v
 Damit sind alle React-Komponenten (inkl. Layout/Organisms/Templates und Form-Helfer) ins Angular-pf übernommen. Storybook-Smoke empfehlenswert, um die neuen Layout-/Foundation-Teile visuell zu
 checken.
 
+---
+Remaining warnings:
+- DefinePluginConflicting values for 'process.env.NODE_ENV': harmless for rendering; tackle later in Storybook config if needed.
+- NgOptimizedImage aspect-ratio warning on the accessibility.png sample: align width/height attributes to the image’s intrinsic ratio or drop them to silence it.
+

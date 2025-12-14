@@ -16,7 +16,7 @@ const meta: Meta<PopoverArgs> = {
         <p style="margin:0;">This popover holds helper content.</p>
       </pf-popover>
     `,
-    imports: [PfPopover]
+    moduleMetadata: { imports: [PfPopover] }
   }),
   args: {
     label: 'Open popover'

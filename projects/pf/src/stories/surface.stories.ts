@@ -14,7 +14,7 @@ const meta: Meta<SurfaceArgs> = {
         <p>Surface content</p>
       </pf-surface>
     `,
-    imports: [PfSurface]
+    moduleMetadata: { imports: [PfSurface] }
   }),
   args: {
     padding: 'md',

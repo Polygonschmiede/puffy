@@ -24,7 +24,7 @@ const meta: Meta<ContextMenuArgs> = {
         </div>
       </pf-context-menu>
     `,
-    imports: [PfContextMenu]
+    moduleMetadata: { imports: [PfContextMenu] }
   }),
   args: {
     items

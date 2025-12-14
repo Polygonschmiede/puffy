@@ -30,7 +30,7 @@ const meta: Meta<DrawerArgs> = {
           <p>Place navigation or supplemental details inside a drawer.</p>
         </pf-drawer>
       `,
-      imports: [PfDrawer, PfButton]
+      moduleMetadata: { imports: [PfDrawer, PfButton] }
     };
   },
   args: {

@@ -22,7 +22,7 @@ const meta: Meta<RadioGroupArgs> = {
       ></pf-radio-group>
       <p style="margin-top: 12px;">Selected: {{ value }}</p>
     `,
-    imports: [PfRadioGroup]
+    moduleMetadata: { imports: [PfRadioGroup] }
   }),
   argTypes: {
     orientation: { control: 'inline-radio', options: ['horizontal', 'vertical'] }

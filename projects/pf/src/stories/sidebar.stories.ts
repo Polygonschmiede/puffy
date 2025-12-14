@@ -19,7 +19,7 @@ const meta: Meta<SidebarArgs> = {
   render: (args: SidebarArgs) => ({
     props: args,
     template: `<pf-sidebar [title]="title" [items]="items"></pf-sidebar>`,
-    imports: [PfSidebar]
+    moduleMetadata: { imports: [PfSidebar] }
   }),
   args: {
     title: 'Workspace',

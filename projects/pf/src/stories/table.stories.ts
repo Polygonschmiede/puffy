@@ -34,7 +34,7 @@ const meta: Meta = {
         </tbody>
       </pf-table>
     `,
-    imports: [PfTable]
+    moduleMetadata: { imports: [PfTable] }
   })
 };
 

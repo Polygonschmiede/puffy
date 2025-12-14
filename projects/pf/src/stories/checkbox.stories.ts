@@ -21,7 +21,7 @@ const meta: Meta<CheckboxArgs> = {
         (checkedChange)="checked = $event"
       ></pf-checkbox>
     `,
-    imports: [PfCheckbox]
+    moduleMetadata: { imports: [PfCheckbox] }
   }),
   args: {
     label: 'Accept terms',

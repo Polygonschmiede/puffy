@@ -33,7 +33,7 @@ const meta: Meta<CardArgs> = {
         }
       `
     ],
-    imports: [PfCard]
+    moduleMetadata: { imports: [PfCard] }
   }),
   argTypes: {
     variant: {

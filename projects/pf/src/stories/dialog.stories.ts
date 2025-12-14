@@ -36,7 +36,7 @@ const meta: Meta<DialogArgs> = {
           </div>
         </pf-dialog>
       `,
-      imports: [PfDialog, PfButton]
+      moduleMetadata: { imports: [PfDialog, PfButton] }
     };
   },
   args: {

@@ -28,7 +28,7 @@ const meta: Meta<PaginationArgs> = {
         ></pf-pagination>
         <p>Current page: {{ state.page() }}</p>
       `,
-      imports: [PfPagination]
+      moduleMetadata: { imports: [PfPagination] }
     };
   },
   args: {
