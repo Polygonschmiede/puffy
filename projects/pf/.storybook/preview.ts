@@ -1,6 +1,8 @@
-import type { Preview } from '@storybook/angular'
-import { setCompodocJson } from "@storybook/addon-docs/angular";
-import docJson from "../documentation.json";
+import type { Preview } from '@storybook/angular';
+import { componentWrapperDecorator } from '@storybook/angular';
+import { setCompodocJson } from '@storybook/addon-docs/angular';
+import docJson from '../documentation.json';
+
 setCompodocJson(docJson);
 
 const preview: Preview = {
@@ -21,19 +23,21 @@ const preview: Preview = {
     layout: 'padded'
   },
   decorators: [
-    (story) => ({
-      template: `<div class="sb-surface"><story /></div>`,
-      styles: [
-        `
-        .sb-surface {
-          background: var(--pf-color-surface, #e9edf5);
-          min-height: 100vh;
-          padding: 32px;
-          font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
-        }
-      `
-      ]
-    })
+    componentWrapperDecorator(
+      (story) => `<div class="sb-surface">${story}</div>`,
+      {
+        styles: [
+          `
+            .sb-surface {
+              background: var(--pf-color-surface, #e9edf5);
+              min-height: 100vh;
+              padding: 32px;
+              font-family: var(--pf-typography-family, 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif);
+            }
+          `
+        ]
+      }
+    )
   ]
 };
 
